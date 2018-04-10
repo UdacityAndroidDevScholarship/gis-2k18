@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_members"
+            android:icon="@drawable/ic_members"
+            android:title="Members" />
+        <item
+            android:id="@+id/nav_gis_stories"
+            android:icon="@drawable/ic_stories"
+            android:title="GIS Stories" />
+        <item
+            android:id="@+id/nav_projects"
+            android:icon="@drawable/ic_projects"
+            android:title="Projects" />
+        <item
+            android:id="@+id/nav_challenges"
+            android:icon="@drawable/ic_challenges"
+            android:title="Challenges" />
+
+        <item
+            android:id="@+id/nav_quizzes"
+            android:icon="@drawable/ic_quizzes"
+            android:title="Quizzes" />
+        <item
+            android:id="@+id/nav_community"
+            android:icon="@drawable/ic_community"
+            android:title="Community" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="Settings" />
+    </group>
+
+
+
+</menu>

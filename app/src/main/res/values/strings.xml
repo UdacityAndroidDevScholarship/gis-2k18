@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Google India Scholarships</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="nav_header_title">Google India Scholarships</string>
+    <string name="course_title_android_dev_basic">Android Development Basic</string>
+    <string name="course_title_android_dev_intermediate">Android Development Intermediate</string>
+    <string name="course_title_web_dev_basic">Web Development Basic</string>
+    <string name="course_title_web_dev_intermediate">Web Development Intermediate</string>
+
+
+    <string-array name="array_course_titles">
+        <item>@string/course_title_android_dev_basic</item>
+        <item>@string/course_title_android_dev_intermediate</item>
+        <item>@string/course_title_web_dev_basic</item>
+        <item>@string/course_title_web_dev_intermediate</item>
+    </string-array>
+
+</resources>
