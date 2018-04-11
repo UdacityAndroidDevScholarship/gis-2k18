@@ -16,7 +16,7 @@ For contributing to this repository follow following steps:
     * Your PR should take code from one stable state to another stable state.
 
 2. For Commits:
-    * Try to have proper commit messages which tell what you commit does.
+    * Try to have proper commit messages which tell what your commit does.
     * If your PR solves some issue, refer that issue to your PR.
     * Provide proper description what your PR does.(Description in terms of Points will be plus).
     * If you are still working on PR. Label it (Work in Progress) and Add TODO's in the description (How to do that given at end of doc) and keep marking once done.
