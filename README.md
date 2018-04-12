@@ -51,4 +51,4 @@ can ask them). Similarly for a web developer.
 
 ## Contribute:
 
-For contributing, to this app you can go through CONTRIBUTE.md.
+For contributing, to this app you can go through CONTRIBUTING.md.
