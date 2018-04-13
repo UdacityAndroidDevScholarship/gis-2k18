@@ -1,4 +1,4 @@
-package com.udacity.googleindiascholarships;
+package com.udacity.googleindiascholarships.ui;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.amulyakhare.textdrawable.TextDrawable;
+import com.udacity.googleindiascholarships.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
