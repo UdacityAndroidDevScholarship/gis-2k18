@@ -10,7 +10,7 @@ import android.view.ViewGroup;
  * Created by jha.anuj.2108 on 13-04-2018.
  */
 
-public class QuizzesActivity extends android.support.v4.app.Fragment{
+public class QuizzesFragment extends android.support.v4.app.Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

@@ -1,11 +1,7 @@
 package com.udacity.googleindiascholarships;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -160,25 +156,25 @@ public class MainActivity extends AppCompatActivity
         switch (id){
 
             case R.id.nav_members:
-                fragment = new MembersActivity();
+                fragment = new MembersFragment();
                 break;
             case R.id.nav_gis_stories:
-                fragment = new StoriesActivity();
+                fragment = new StoriesFragment();
                 break;
             case R.id.nav_projects:
-                fragment = new ProjectsActivity();
+                fragment = new ProjectsFragment();
                 break;
             case R.id.nav_challenges:
-                fragment = new ChallengesActivity();
+                fragment = new ChallengesFragment();
                 break;
             case R.id.nav_quizzes:
-                fragment = new QuizzesActivity();
+                fragment = new QuizzesFragment();
                 break;
             case R.id.nav_community:
-                fragment = new CommunityActivity();
+                fragment = new CommunityFragment();
                 break;
             case R.id.nav_settings:
-                fragment = new SettingsActivity();
+                fragment = new SettingsFragment();
                 break;
         }
 
