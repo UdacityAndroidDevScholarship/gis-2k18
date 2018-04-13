@@ -1,5 +1,7 @@
 package com.udacity.googleindiascholarships;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -147,24 +149,46 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_members) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gis_stories) {
+        displaySelectedScreen(id);
+        return true;
+    }
 
-        } else if (id == R.id.nav_projects) {
+    public void displaySelectedScreen(int id){
 
-        } else if (id == R.id.nav_challenges) {
+        android.support.v4.app.Fragment fragment = null ;
 
-        } else if (id == R.id.nav_quizzes) {
+        switch (id){
 
-        } else if (id == R.id.nav_community) {
+            case R.id.nav_members:
+                fragment = new MembersActivity();
+                break;
+            case R.id.nav_gis_stories:
+                fragment = new StoriesActivity();
+                break;
+            case R.id.nav_projects:
+                fragment = new ProjectsActivity();
+                break;
+            case R.id.nav_challenges:
+                fragment = new ChallengesActivity();
+                break;
+            case R.id.nav_quizzes:
+                fragment = new QuizzesActivity();
+                break;
+            case R.id.nav_community:
+                fragment = new CommunityActivity();
+                break;
+            case R.id.nav_settings:
+                fragment = new SettingsActivity();
+                break;
+        }
 
-        } else if (id == R.id.nav_settings) {
-
+        if(fragment != null){
+            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_main, fragment);
+            ft.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
     }
 }
