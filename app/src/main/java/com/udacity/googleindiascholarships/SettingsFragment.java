@@ -14,7 +14,8 @@ public class SettingsFragment extends android.support.v4.app.Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_settings,container,false);
+        View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
+        return rootView;
     }
 
     @Override
