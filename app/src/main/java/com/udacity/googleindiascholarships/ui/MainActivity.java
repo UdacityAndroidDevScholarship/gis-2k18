@@ -2,8 +2,10 @@ package com.udacity.googleindiascholarships.ui;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -11,19 +13,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.amulyakhare.textdrawable.TextDrawable;
-import com.udacity.googleindiascholarships.ChallengesFragment;
-import com.udacity.googleindiascholarships.CommunityFragment;
-import com.udacity.googleindiascholarships.MembersFragment;
-import com.udacity.googleindiascholarships.ProjectsFragment;
-import com.udacity.googleindiascholarships.QuizzesFragment;
 import com.udacity.googleindiascholarships.R;
-import com.udacity.googleindiascholarships.SettingsFragment;
-import com.udacity.googleindiascholarships.StoriesFragment;
+import com.udacity.googleindiascholarships.challenges.ui.ChallengesFragment;
+import com.udacity.googleindiascholarships.community.ui.CommunityFragment;
+import com.udacity.googleindiascholarships.members.ui.MembersFragment;
+import com.udacity.googleindiascholarships.projects.ui.ProjectsFragment;
+import com.udacity.googleindiascholarships.quizzes.ui.QuizzesFragment;
+import com.udacity.googleindiascholarships.stories.ui.StoriesFragment;
+
+import java.util.Arrays;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -38,10 +43,10 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -52,68 +57,32 @@ public class MainActivity extends AppCompatActivity
         spCourses.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                int textColor = Color.parseColor("#00aeef");
-                int backgroundColor = Color.parseColor("#ffffff");
 
-                if(position == 0){
-
-                    TextDrawable drawable = TextDrawable
-                            .builder()
-                            .beginConfig()
-                            .bold()
-                            .textColor(textColor)
-                            .toUpperCase()
-                            .withBorder(5)
-                            .endConfig().buildRound("AB",backgroundColor);
-                    ivNavHeader.setImageDrawable(drawable);
-
-
-                }else if(position == 1){
-
-                    TextDrawable drawable = TextDrawable
-                            .builder()
-                            .beginConfig()
-                            .bold()
-                            .textColor(textColor)
-                            .toUpperCase()
-                            .withBorder(5)
-                            .endConfig().buildRound("AI",backgroundColor);
-                    ivNavHeader.setImageDrawable(drawable);
-
-
-                }else if(position == 2){
-
-                    TextDrawable drawable = TextDrawable
-                            .builder()
-                            .beginConfig()
-                            .bold()
-                            .textColor(textColor)
-                            .toUpperCase()
-                            .withBorder(5)
-                            .endConfig().buildRound("WB",backgroundColor);
-                    ivNavHeader.setImageDrawable(drawable);
-
-
-                }else if(position == 3){
-                    TextDrawable drawable = TextDrawable
-                            .builder()
-                            .beginConfig()
-                            .bold()
-                            .textColor(textColor)
-                            .toUpperCase()
-                            .withBorder(5)
-                            .endConfig().buildRound("WI",backgroundColor);
-                    ivNavHeader.setImageDrawable(drawable);
-
-                }
+                setIvNavHeader(Arrays.asList(getResources().getStringArray(
+                        R.array.array_course_abb)).get(position));
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
+                setIvNavHeader(getString(R.string.NA));
             }
         });
     }
+
+    private void setIvNavHeader(String text) {
+
+        TextDrawable drawable = TextDrawable
+                .builder()
+                .beginConfig()
+                .bold()
+                .textColor(ContextCompat.getColor(this,R.color.colorPrimary))
+                .toUpperCase()
+                .withBorder(5)
+                .endConfig().buildRound(text,ContextCompat.getColor(
+                        this,R.color.navBarBackground));
+        ivNavHeader.setImageDrawable(drawable);
+    }
+
 
     @Override
     public void onBackPressed() {
@@ -152,14 +121,13 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
         displaySelectedScreen(id);
         return true;
     }
 
-    public void displaySelectedScreen(int id){
+    private void displaySelectedScreen(int id){
 
-        android.support.v4.app.Fragment fragment = null ;
+        Fragment fragment = null ;
 
         switch (id){
 
@@ -187,7 +155,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         if(fragment != null){
-            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_main, fragment).addToBackStack(null);
             ft.commit();
         }

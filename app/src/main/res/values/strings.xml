@@ -11,7 +11,7 @@
     <string name="course_title_android_dev_intermediate">Android Development Intermediate</string>
     <string name="course_title_web_dev_basic">Web Development Basic</string>
     <string name="course_title_web_dev_intermediate">Web Development Intermediate</string>
-
+    <string name="NA">NA</string>
 
     <string-array name="array_course_titles">
         <item>@string/course_title_android_dev_basic</item>
@@ -19,5 +19,13 @@
         <item>@string/course_title_web_dev_basic</item>
         <item>@string/course_title_web_dev_intermediate</item>
     </string-array>
+
+    <string-array name="array_course_abb">
+        <item>AB</item>
+        <item>AI</item>
+        <item>WB</item>
+        <item>WI</item>
+    </string-array>
+
 
 </resources>
