@@ -16,7 +16,14 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.amulyakhare.textdrawable.TextDrawable;
+import com.udacity.googleindiascholarships.ChallengesFragment;
+import com.udacity.googleindiascholarships.CommunityFragment;
+import com.udacity.googleindiascholarships.MembersFragment;
+import com.udacity.googleindiascholarships.ProjectsFragment;
+import com.udacity.googleindiascholarships.QuizzesFragment;
 import com.udacity.googleindiascholarships.R;
+import com.udacity.googleindiascholarships.SettingsFragment;
+import com.udacity.googleindiascholarships.StoriesFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -181,7 +188,7 @@ public class MainActivity extends AppCompatActivity
 
         if(fragment != null){
             android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_main, fragment);
+            ft.replace(R.id.content_main, fragment).addToBackStack(null);
             ft.commit();
         }
 
