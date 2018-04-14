@@ -2,8 +2,6 @@ package com.udacity.googleindiascholarships.ui;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -148,24 +146,46 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_members) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gis_stories) {
+        displaySelectedScreen(id);
+        return true;
+    }
 
-        } else if (id == R.id.nav_projects) {
+    public void displaySelectedScreen(int id){
 
-        } else if (id == R.id.nav_challenges) {
+        android.support.v4.app.Fragment fragment = null ;
 
-        } else if (id == R.id.nav_quizzes) {
+        switch (id){
 
-        } else if (id == R.id.nav_community) {
+            case R.id.nav_members:
+                fragment = new MembersFragment();
+                break;
+            case R.id.nav_gis_stories:
+                fragment = new StoriesFragment();
+                break;
+            case R.id.nav_projects:
+                fragment = new ProjectsFragment();
+                break;
+            case R.id.nav_challenges:
+                fragment = new ChallengesFragment();
+                break;
+            case R.id.nav_quizzes:
+                fragment = new QuizzesFragment();
+                break;
+            case R.id.nav_community:
+                fragment = new CommunityFragment();
+                break;
+            case R.id.nav_settings:
+                fragment = new SettingsFragment();
+                break;
+        }
 
-        } else if (id == R.id.nav_settings) {
-
+        if(fragment != null){
+            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_main, fragment);
+            ft.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
     }
 }
