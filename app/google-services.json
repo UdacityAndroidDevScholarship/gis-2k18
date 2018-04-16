@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "930755902183",
+    "firebase_url": "https://gis-2k18.firebaseio.com",
+    "project_id": "gis-2k18",
+    "storage_bucket": "gis-2k18.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930755902183:android:0cc8c0282a935a1e",
+        "android_client_info": {
+          "package_name": "com.udacity.googleindiascholarships"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930755902183-k9csnmhjm3tnv9avhm27k920o9cpeg1i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.udacity.googleindiascholarships",
+            "certificate_hash": "ac76b7ba2fd990b0c1de49d3fa65868622fd0808"
+          }
+        },
+        {
+          "client_id": "930755902183-g922hual0bbd96g42e93j418qoqsooa2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCC35bkQ3lXnmdOsDe_lLaxfANKW8aH4a4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930755902183-g922hual0bbd96g42e93j418qoqsooa2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
