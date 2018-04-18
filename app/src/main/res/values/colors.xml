@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#0298d1</color>
     <color name="colorAccent">#24c2fd</color>
     <color name="navBarBackground">#ffffff</color>
+    <color name="darkGray">#616161</color>
+
 </resources>

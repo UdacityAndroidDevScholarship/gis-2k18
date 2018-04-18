@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:padding="16dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.udacity.googleindiascholarships.LoginActivity"
+    tools:showIn="@layout/activity_login">
+
+    <ImageView
+        android:id="@+id/gis_logo_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gis_logo"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/gis_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GIS 2018"
+        android:layout_marginTop="4dp"
+        android:textStyle="bold"
+        android:textColor="@color/navBarBackground"
+        android:layout_below="@+id/gis_logo_img"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        />
+
+    <TextView
+        android:id="@+id/gis_subheading_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:text="- by the scholars, for the scholars"
+        android:textColor="#c7c5c5"
+        android:layout_below="@+id/gis_txt"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        />
+
+    <EditText
+        android:layout_below="@id/gis_subheading_txt"
+        android:id="@+id/username_txt"
+        android:layout_marginTop="4dp"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:hint="@string/username_hint"
+        android:drawablePadding="8dp"
+        android:textColorHint="#FFF"
+        android:textColor="#FFF"
+        android:paddingStart="16dp"
+        android:paddingLeft="16dp"
+        android:paddingEnd="16dp"
+        android:paddingRight="16dp"
+        android:layout_height="40dp"
+        android:drawableStart="@drawable/ic_account"
+        android:background="@drawable/rounded_shape"/>
+
+    <EditText
+        android:id="@+id/password_txt"
+        android:inputType="textPassword"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/username_txt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="@string/password_hint"
+        android:drawablePadding="8dp"
+        android:textColorHint="#FFF"
+        android:textColor="#FFF"
+        android:paddingStart="16dp"
+        android:paddingLeft="16dp"
+        android:paddingEnd="16dp"
+        android:paddingRight="16dp"
+        android:drawableStart="@drawable/ic_password"
+        android:background="@drawable/rounded_shape"/>
+
+    <Button
+        android:layout_marginTop="16dp"
+        android:id="@+id/sign_in_btn"
+        android:layout_above="@+id/forgot_password_txt"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="8dp"
+        android:text="@string/sign_in"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:textColor="@color/navBarBackground"
+        android:background="@drawable/rounded_shape"/>
+
+    <TextView
+        android:id="@+id/forgot_password_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forgot_your_password"
+        android:textAlignment="center"
+        android:layout_marginTop="8dp"
+        android:textSize="14sp"
+        android:textColor="#d7d0d0"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
