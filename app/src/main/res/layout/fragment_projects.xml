@@ -4,13 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Project"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+  <android.support.v7.widget.RecyclerView
+
+      android:id="@+id/projectsRecyclerView"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+
+  </android.support.v7.widget.RecyclerView>
 </FrameLayout>

@@ -5,5 +5,6 @@
     <color name="colorAccent">#24c2fd</color>
     <color name="navBarBackground">#ffffff</color>
     <color name="darkGray">#616161</color>
+    <color name="black">#000000</color>
 
 </resources>
