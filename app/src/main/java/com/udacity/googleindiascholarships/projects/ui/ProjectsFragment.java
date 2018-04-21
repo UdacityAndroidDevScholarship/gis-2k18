@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.udacity.googleindiascholarships.R;
-import com.udacity.googleindiascholarships.projects.adapter.ProjectsAdapter;
+import com.udacity.googleindiascholarships.projects.ui.adapter.ProjectsAdapter;
 import com.udacity.googleindiascholarships.projects.entities.Project;
 
 import java.util.ArrayList;
