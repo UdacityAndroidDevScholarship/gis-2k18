@@ -57,4 +57,3 @@ public class Project {
         this.pathToImage = pathToImage;
     }
 }
-

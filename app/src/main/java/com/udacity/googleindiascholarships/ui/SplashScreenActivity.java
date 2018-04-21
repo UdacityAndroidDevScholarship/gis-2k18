@@ -11,7 +11,6 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.udacity.googleindiascholarships.LoginActivity;
 import com.udacity.googleindiascholarships.R;
 
 /**
