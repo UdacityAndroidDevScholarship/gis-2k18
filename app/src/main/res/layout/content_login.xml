@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:padding="16dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.udacity.googleindiascholarships.ui.LoginActivity"
+    tools:showIn="@layout/activity_login">
+
+    <ImageView
+        android:id="@+id/gis_logo_img"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/gis_logo"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/gis_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gis_logo_img"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="@string/gis_2018"
+        android:textAlignment="center"
+        android:textColor="@color/opaqueWhite"
+        android:textSize="@dimen/sp_24" />
+
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/username_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gis_txt"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_32"
+        android:drawablePadding="@dimen/dp_8"
+        android:drawableStart="@android:drawable/sym_action_email"
+        android:fontFamily="@font/roboto"
+        android:hint="@string/username_hint"
+        android:padding="@dimen/dp_16"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/opaqueWhite"
+        android:textSize="@dimen/sp_18"
+        app:backgroundTint="@color/opaqueWhite" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/password_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username_txt"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_16"
+        android:drawablePadding="@dimen/dp_8"
+        android:drawableStart="@android:drawable/ic_lock_idle_lock"
+        android:fontFamily="@font/roboto"
+        android:hint="@string/password_hint"
+        android:padding="@dimen/dp_16"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/opaqueWhite"
+        android:textSize="@dimen/sp_18"
+        app:backgroundTint="@color/opaqueWhite" />
+
+
+    <Button
+        android:id="@+id/sign_in_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password_txt"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_48"
+        android:background="@drawable/rounded_shape"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/sign_in"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_24" />
+
+    <TextView
+        android:id="@+id/forgot_password_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sign_in_btn"
+        android:text="@string/forgot_password"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/dp_16"
+        android:fontFamily="@font/roboto_thin"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/opaqueWhite"
+        android:textAllCaps="false"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

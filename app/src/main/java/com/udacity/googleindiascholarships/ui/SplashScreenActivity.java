@@ -26,7 +26,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     private Runnable runnable = new Runnable() {
         @Override public void run() {
-            Intent intent = new Intent(SplashScreenActivity.this , MainActivity.class);
+            Intent intent = new Intent(SplashScreenActivity.this , LoginActivity.class);
             finish();
             overridePendingTransition(R.anim.enter, R.anim.exit);
             startActivity(intent);

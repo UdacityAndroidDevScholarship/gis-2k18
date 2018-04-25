@@ -1,17 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<FrameLayout
+<android.support.v4.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Stories"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-</FrameLayout>
+        <TextView
+            android:id="@+id/tv_featured_stories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Featured"
+            android:textColor="@color/colorPrimaryDark"
+            android:paddingLeft="10dp"
+            android:textStyle="bold"
+            android:paddingTop="10dp"
+            android:visibility="visible"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_featured_stories"
+            android:layout_width="match_parent"
+            android:layout_height="170dp" />
+        <TextView
+            android:id="@+id/tv_other_stories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:textStyle="bold"
+            android:text="All Stories"
+            android:textColor="@color/colorPrimaryDark"
+            android:visibility="visible"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_all_stories"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="false"/>
+
+    </LinearLayout >
+</android.support.v4.widget.NestedScrollView>

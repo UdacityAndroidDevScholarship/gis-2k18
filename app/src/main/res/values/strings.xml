@@ -26,6 +26,15 @@
         <item>WB</item>
         <item>WI</item>
     </string-array>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="gis_2k18_logo">GIS 2k18 LOGO</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="gis_2018">GIS 2018</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="reset_here">Reset here.</string>
 
+    <string name="featured_story_sample_description">"25 Android libraries you definitely want to try out in early 2017"</string>
 
 </resources>
