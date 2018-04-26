@@ -7,6 +7,9 @@
     <color name="darkGray">#616161</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="lightWhite">#CCFFFFFF</color>
+    <color name="darkBlue">#0687B7</color>
+    <color name="colorTitleProject">#126381</color>
 
     <color name="opaqueWhite">#90ffffff</color>
 
