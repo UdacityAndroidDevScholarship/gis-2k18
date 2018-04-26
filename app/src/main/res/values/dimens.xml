@@ -22,19 +22,12 @@
 
     -->
 
-    <!-- Removed dp_8. Use small_margin instead. -->
     <dimen name="small_margin">8dp</dimen>
-    <!-- Removed dp_16. Use standard_margin instead. -->
     <dimen name="standard_margin">16dp</dimen>
-    <!-- Removed dp_32. Use double_margin instead. -->
     <dimen name="double_margin">32dp</dimen>
-    <!-- Removed dp_48. Use triple_margin instead. -->
     <dimen name="triple_margin">48dp</dimen>
-    <!-- Removed sp_16. Use sp_standard_size instead. -->
     <dimen name="sp_standard_size">16sp</dimen>
-    <!-- Removed sp_24. Use sign_in_text_size instead. -->
     <dimen name="sign_in_text_size">24sp</dimen>
-    <!-- Removed sp_18. Use input_size instead. -->
     <dimen name="input_size">18sp</dimen>
 
     <dimen name="sp_small_size">8sp</dimen>

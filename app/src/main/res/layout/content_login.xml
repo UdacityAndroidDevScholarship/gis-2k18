@@ -27,7 +27,7 @@
         android:fontFamily="@font/roboto_thin"
         android:text="@string/gis_2018"
         android:textAlignment="center"
-        android:textColor="@color/opaqueWhite"
+        android:textColor="@color/secondaryLight"
         android:textSize="@dimen/sign_in_text_size" />
 
 
@@ -45,9 +45,9 @@
         android:hint="@string/username_hint"
         android:padding="@dimen/standard_margin"
         android:textColor="@android:color/white"
-        android:textColorHint="@color/opaqueWhite"
+        android:textColorHint="@color/secondaryLight"
         android:textSize="@dimen/input_size"
-        app:backgroundTint="@color/opaqueWhite" />
+        app:backgroundTint="@color/secondaryLight" />
 
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/password_txt"
@@ -63,9 +63,9 @@
         android:hint="@string/password_hint"
         android:padding="@dimen/standard_margin"
         android:textColor="@android:color/white"
-        android:textColorHint="@color/opaqueWhite"
+        android:textColorHint="@color/secondaryLight"
         android:textSize="@dimen/input_size"
-        app:backgroundTint="@color/opaqueWhite" />
+        app:backgroundTint="@color/secondaryLight" />
 
 
     <Button
@@ -94,7 +94,7 @@
         android:layout_marginTop="@dimen/standard_margin"
         android:fontFamily="@font/roboto_thin"
         android:textSize="@dimen/sp_standard_size"
-        android:textColor="@color/opaqueWhite"
+        android:textColor="@color/secondaryLight"
         android:textAllCaps="false"
         android:layout_centerInParent="true"/>
 
