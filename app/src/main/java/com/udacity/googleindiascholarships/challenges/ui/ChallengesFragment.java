@@ -38,8 +38,8 @@ public class ChallengesFragment extends android.support.v4.app.Fragment {
         challengeList.add(new Challenge("Vineet"));
         challengeList.add(new Challenge("Anuj"));
 
-        ChallengesAdapter projectsAdapter = new ChallengesAdapter(getContext(), challengeList);
-        challengeRecyclerView.setAdapter(projectsAdapter);
+        ChallengesAdapter challengesAdapter = new ChallengesAdapter(getContext(), challengeList);
+        challengeRecyclerView.setAdapter(challengesAdapter);
         return rootView;
     }
 
