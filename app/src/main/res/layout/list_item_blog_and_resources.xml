@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+    app:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gradient"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/link_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/link_thumbnail"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/gis_logo" />
+
+            <TextView
+                android:id="@+id/link_shared_by"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="Rajat Kumar Gupta"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/link_preview_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:padding="8dp"
+            android:text="@string/default_url"
+            android:textColor="@color/white"
+            android:layout_below="@+id/link_header"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/link_open_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:layout_alignParentBottom="true"
+            android:padding="8dp"
+            android:drawableEnd="@drawable/ic_open"
+            android:text="Open in browser"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
