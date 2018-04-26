@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity
                 .toUpperCase()
                 .withBorder(5)
                 .endConfig().buildRound(text,ContextCompat.getColor(
-                        this,R.color.navBarBackground));
+                        this,R.color.white));
         ivNavHeader.setImageDrawable(drawable);
     }
 
