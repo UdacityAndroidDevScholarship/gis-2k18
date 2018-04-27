@@ -25,9 +25,6 @@ public class MembersFragment extends android.support.v4.app.Fragment{
 
         btnPhase1 = (Button) rootView.findViewById(R.id.btn_phase1);
         btnPhase2 = (Button) rootView.findViewById(R.id.btn_phase2);
-        Intent intent = new Intent(getActivity(),ProfileActivity.class);
-        startActivity(intent);
-
 
         btnPhase1.setOnClickListener(new View.OnClickListener() {
             @Override

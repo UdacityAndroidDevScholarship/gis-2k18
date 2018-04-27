@@ -38,6 +38,9 @@
     <string name="featured_story_sample_description">"25 Android libraries you definitely want to try out in early 2017"</string>
     <string name="profile_gis_story_sample_description">"The journey of wanderer turned an Android Developer"</string>
 
+    <string name="profile_short_description_sample">"Hi! My name is Vineeth Reddy, I’m a passionate Android developer and I enjoy creating apps that create an impact in the world. Contact me at vineethreddy@gmail.com"</string>
+
+    <string name="profile_skills_sample">XML , ANDROID , FIREBASE , UI , ADOBE </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="default_url">https://github.com/knightcube</string>
