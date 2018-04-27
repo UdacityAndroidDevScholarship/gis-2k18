@@ -14,5 +14,5 @@
     <color name="lightBlue">#2175BC</color>
 
     <color name="opaqueWhite">#90ffffff</color>
-
+    <color name="secondaryLight">#90ffffff</color>
 </resources>

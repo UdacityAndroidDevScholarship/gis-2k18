@@ -6,13 +6,35 @@
     <dimen name="nav_header_height">180dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
-    <dimen name="dp_8">8dp</dimen>
-    <dimen name="dp_16">16dp</dimen>
-    <dimen name="dp_32">32dp</dimen>
-    <dimen name="dp_48">48dp</dimen>
-    <dimen name="sp_16">16sp</dimen>
-    <dimen name="sp_24">24sp</dimen>
-    <dimen name="sp_18">18sp</dimen>
+    <!--
+        Margin Structure For This Project
+
+            small_margin = 8dp
+            standard_margin = 16dp
+            double_margin = 32dp
+            triple_margin = 48dp
+
+        For Scaled Pixels (sp)
+            sp_small_size = 8sp
+            sp_standard_size = 16sp
+            sp_double_size = 32sp
+            sp_triple_size = 48sp
+
+    -->
+
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="standard_margin">16dp</dimen>
+    <dimen name="double_margin">32dp</dimen>
+    <dimen name="triple_margin">48dp</dimen>
+    <dimen name="sp_standard_size">16sp</dimen>
+    <dimen name="sign_in_text_size">24sp</dimen>
+    <dimen name="input_size">18sp</dimen>
+
+    <dimen name="sp_small_size">8sp</dimen>
+    <dimen name="sp_double_size">32sp</dimen>
+    <dimen name="sp_triple_size">48sp</dimen>
+
+    <dimen name="card_view_elevation">5dp</dimen>
     <dimen name="splash_icon_height_width">100dp</dimen>
     <dimen name="splash_icon_margin_top">150dp</dimen>
     <dimen name="splash_app_version_text_size">15sp</dimen>

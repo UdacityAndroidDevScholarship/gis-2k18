@@ -15,7 +15,8 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/gis_logo"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/app_name"/>
 
     <TextView
         android:id="@+id/gis_txt"
@@ -26,8 +27,8 @@
         android:fontFamily="@font/roboto_thin"
         android:text="@string/gis_2018"
         android:textAlignment="center"
-        android:textColor="@color/opaqueWhite"
-        android:textSize="@dimen/sp_24" />
+        android:textColor="@color/secondaryLight"
+        android:textSize="@dimen/sign_in_text_size" />
 
 
     <android.support.v7.widget.AppCompatEditText
@@ -35,36 +36,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/gis_txt"
-        android:layout_marginEnd="@dimen/dp_16"
-        android:layout_marginStart="@dimen/dp_16"
-        android:layout_marginTop="@dimen/dp_32"
-        android:drawablePadding="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/double_margin"
+        android:drawablePadding="@dimen/small_margin"
         android:drawableStart="@android:drawable/sym_action_email"
         android:fontFamily="@font/roboto"
         android:hint="@string/username_hint"
-        android:padding="@dimen/dp_16"
+        android:padding="@dimen/standard_margin"
         android:textColor="@android:color/white"
-        android:textColorHint="@color/opaqueWhite"
-        android:textSize="@dimen/sp_18"
-        app:backgroundTint="@color/opaqueWhite" />
+        android:textColorHint="@color/secondaryLight"
+        android:textSize="@dimen/input_size"
+        app:backgroundTint="@color/secondaryLight" />
 
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/password_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/username_txt"
-        android:layout_marginEnd="@dimen/dp_16"
-        android:layout_marginStart="@dimen/dp_16"
-        android:layout_marginTop="@dimen/dp_16"
-        android:drawablePadding="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:drawablePadding="@dimen/small_margin"
         android:drawableStart="@android:drawable/ic_lock_idle_lock"
         android:fontFamily="@font/roboto"
         android:hint="@string/password_hint"
-        android:padding="@dimen/dp_16"
+        android:padding="@dimen/standard_margin"
         android:textColor="@android:color/white"
-        android:textColorHint="@color/opaqueWhite"
-        android:textSize="@dimen/sp_18"
-        app:backgroundTint="@color/opaqueWhite" />
+        android:textColorHint="@color/secondaryLight"
+        android:textSize="@dimen/input_size"
+        app:backgroundTint="@color/secondaryLight" />
 
 
     <Button
@@ -73,15 +74,15 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/password_txt"
         android:layout_centerInParent="true"
-        android:layout_marginEnd="@dimen/dp_16"
-        android:layout_marginStart="@dimen/dp_16"
-        android:layout_marginTop="@dimen/dp_48"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/triple_margin"
         android:background="@drawable/rounded_shape"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/sign_in"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/sp_24" />
+        android:textSize="@dimen/sign_in_text_size" />
 
     <TextView
         android:id="@+id/forgot_password_txt"
@@ -90,10 +91,10 @@
         android:layout_below="@id/sign_in_btn"
         android:text="@string/forgot_password"
         android:textAlignment="center"
-        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginTop="@dimen/standard_margin"
         android:fontFamily="@font/roboto_thin"
-        android:textSize="@dimen/sp_16"
-        android:textColor="@color/opaqueWhite"
+        android:textSize="@dimen/sp_standard_size"
+        android:textColor="@color/secondaryLight"
         android:textAllCaps="false"
         android:layout_centerInParent="true"/>
 
