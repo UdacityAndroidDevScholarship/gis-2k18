@@ -9,7 +9,10 @@
     <color name="white">#FFFFFF</color>
     <color name="lightWhite">#CCFFFFFF</color>
     <color name="darkBlue">#0687B7</color>
-    <color name="colorTitleProject">#126381</color>
+    <color name="colorTitle">#126381</color>
+
+    <color name="lightBlue">#2175BC</color>
+
     <color name="opaqueWhite">#90ffffff</color>
     <color name="secondaryLight">#90ffffff</color>
 </resources>
