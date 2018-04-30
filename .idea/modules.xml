@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gis-2k18 main.iml" filepath="$PROJECT_DIR$/gis-2k18 main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gis-2k18.iml" filepath="$PROJECT_DIR$/gis-2k18.iml" />
+      <module fileurl="file://D:\Projects\AndroidProjects\Collaborative projects\gis-2k18\gis-2k18 main.iml" filepath="D:\Projects\AndroidProjects\Collaborative projects\gis-2k18\gis-2k18 main.iml" />
     </modules>
   </component>
 </project>
