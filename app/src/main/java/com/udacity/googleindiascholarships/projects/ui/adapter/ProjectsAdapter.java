@@ -1,6 +1,7 @@
 package com.udacity.googleindiascholarships.projects.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.udacity.googleindiascholarships.R;
 import com.udacity.googleindiascholarships.projects.entities.Project;
+import com.udacity.googleindiascholarships.projects.ui.ProjectDetails;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +57,20 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Projec
             super(itemView);
             projectImageView = (ImageView) itemView.findViewById(R.id.projectImage);
             projectNameTextView = (TextView) itemView.findViewById(R.id.projectName);
+
+
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Context context = view.getContext();
+                    int position = getAdapterPosition();
+                    Intent intent = new Intent(view.getContext(), ProjectDetails.class);
+                    context.startActivity(intent);
+
+                }
+            });
+
 
         }
     }

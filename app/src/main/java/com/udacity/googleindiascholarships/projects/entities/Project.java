@@ -8,6 +8,8 @@ public class Project {
     private String pathToImage;
     private int placeHolderImage;
 
+    private int contactImage;
+
     public Project(String name, String description, String githubLink, String pathToImage) {
         this.name = name;
         this.description = description;
@@ -19,6 +21,14 @@ public class Project {
         this.name = name;
         this.placeHolderImage = placeholderImage;
 
+    }
+
+    public int getContactImage() {
+        return contactImage;
+    }
+
+    public Project(int contactImage){
+        this.contactImage = contactImage;
     }
 
     public int getPlaceHolderImage() {

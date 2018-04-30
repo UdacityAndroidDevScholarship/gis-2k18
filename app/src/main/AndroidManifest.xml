@@ -36,7 +36,12 @@
 
         <activity android:name=".members.ui.Phase1Activity" />
         <activity android:name=".members.ui.Phase2Activity" />
-        <activity android:name=".members.ui.ProfileActivity"
+        <activity
+            android:name=".members.ui.ProfileActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".projects.ui.ProjectDetails"
+            android:label="@string/title_activity_project_details"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
