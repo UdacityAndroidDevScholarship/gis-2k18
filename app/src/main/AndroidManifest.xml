@@ -34,15 +34,21 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".members.ui.Phase1Activity" />
-        <activity android:name=".members.ui.Phase2Activity" />
+        <activity
+            android:name=".members.ui.Phase1Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".members.ui.Phase2Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".members.ui.ProfileActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"/>
+     
         <activity
             android:name=".projects.ui.ProjectDetails"
             android:label="@string/title_activity_project_details"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+      
     </application>
 
 </manifest>

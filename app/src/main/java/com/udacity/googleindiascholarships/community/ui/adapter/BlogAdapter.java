@@ -8,10 +8,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.udacity.googleindiascholarships.R;
-import com.udacity.googleindiascholarships.challenges.ui.entities.Challenge;
 import com.udacity.googleindiascholarships.community.ui.ExternalLinks;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

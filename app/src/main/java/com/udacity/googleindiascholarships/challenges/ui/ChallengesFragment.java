@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.udacity.googleindiascholarships.R;
 import com.udacity.googleindiascholarships.challenges.ui.adapter.ChallengesAdapter;
-import com.udacity.googleindiascholarships.challenges.ui.entities.Challenge;
+import com.udacity.googleindiascholarships.challenges.entities.Challenge;
 
 import java.util.ArrayList;
 

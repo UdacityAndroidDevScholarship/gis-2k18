@@ -1,4 +1,4 @@
-package com.udacity.googleindiascholarships.stories.ui;
+package com.udacity.googleindiascholarships.stories.ui.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

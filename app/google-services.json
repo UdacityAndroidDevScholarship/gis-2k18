@@ -15,22 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "930755902183-djns7p3hnvte6qo8ando4eobedbhpaij.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.udacity.googleindiascholarships",
-            "certificate_hash": "011e09aec28e7bcb3358f74f0514e83d2de97198"
-          }
-        },
-        {
-          "client_id": "930755902183-n9p70q6ini143f3k4pkdklei0ihh1cru.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.udacity.googleindiascholarships",
-            "certificate_hash": "bd72137d6192197fef0cd7f81046efffdfd41b2a"
-          }
-        },
-        {
           "client_id": "930755902183-k9csnmhjm3tnv9avhm27k920o9cpeg1i.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

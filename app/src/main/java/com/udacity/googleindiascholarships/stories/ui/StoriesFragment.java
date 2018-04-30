@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.udacity.googleindiascholarships.R;
+import com.udacity.googleindiascholarships.stories.ui.adapters.AllStoriesAdapter;
+import com.udacity.googleindiascholarships.stories.ui.adapters.FeaturedStoriesAdapter;
 
 /**
  * Created by jha.anuj.2108 on 13-04-2018.

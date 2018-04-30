@@ -1,4 +1,4 @@
-package com.udacity.googleindiascholarships.challenges.ui.entities;
+package com.udacity.googleindiascholarships.challenges.entities;
 
 import android.media.Image;
 
