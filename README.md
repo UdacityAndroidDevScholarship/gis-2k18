@@ -52,3 +52,7 @@ can ask them). Similarly for a web developer.
 ## Contribute:
 
 For contributing, to this app you can go through CONTRIBUTING.md.
+
+## Coding Guidelines
+
+We are keeping the guidelines as simple as possible to get more and more contributions from the community. Do not be afraid to make PRs and issues. We will take a look into code issues very seriously. UI can be improved always. Here are a good set of guidelines to be followed - [Guidelines](https://blog.mindorks.com/android-code-style-and-guidelines-d5f80453d5c7)
