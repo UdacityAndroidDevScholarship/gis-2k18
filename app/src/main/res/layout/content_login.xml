@@ -84,18 +84,40 @@
         android:textColor="@android:color/white"
         android:textSize="@dimen/sign_in_text_size" />
 
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/google_sign_in_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sign_in_btn"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sign_in_text_size" />
+
     <TextView
         android:id="@+id/forgot_password_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/sign_in_btn"
+        android:layout_below="@id/google_sign_in_btn"
         android:text="@string/forgot_password"
         android:textAlignment="center"
-        android:layout_marginTop="@dimen/standard_margin"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/roboto_thin"
         android:textSize="@dimen/sp_standard_size"
         android:textColor="@color/secondaryLight"
         android:textAllCaps="false"
         android:layout_centerInParent="true"/>
 
+    <ProgressBar
+        android:id="@+id/sign_in_progress"
+        android:layout_centerInParent="true"
+        android:theme="@style/CircularProgress"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
 </RelativeLayout>
