@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity
 
     Spinner spCourses;
     ImageView ivNavHeader;
+    ArrayAdapter<CharSequence> courseSpinnerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,14 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         ivNavHeader = navigationView.getHeaderView(0).findViewById(R.id.ivNavHeader);
         spCourses = navigationView.getHeaderView(0).findViewById(R.id.spCourses);
+
+        // Instantiating the custom spinner to change the Dropdown layout resources
+        courseSpinnerAdapter = ArrayAdapter.createFromResource(this,
+                R.array.array_course_titles,
+                R.layout.custom_spinner_list_item);
+        courseSpinnerAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
+        spCourses.setAdapter(courseSpinnerAdapter);
+
         spCourses.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {

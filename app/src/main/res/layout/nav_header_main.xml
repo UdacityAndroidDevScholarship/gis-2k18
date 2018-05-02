@@ -32,7 +32,6 @@
     <Spinner
         android:id="@+id/spCourses"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/array_course_titles"/>
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
