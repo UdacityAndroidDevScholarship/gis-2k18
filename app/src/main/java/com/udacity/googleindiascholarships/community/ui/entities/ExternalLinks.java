@@ -1,4 +1,4 @@
-package com.udacity.googleindiascholarships.community.ui;
+package com.udacity.googleindiascholarships.community.ui.entities;
 
 /**
  * Created by Rajat Kumar Gupta on 26-04-2018.
@@ -7,17 +7,14 @@ package com.udacity.googleindiascholarships.community.ui;
 public class ExternalLinks {
     private String linkUrl;
     private String linkPostedBy;
-    private String linkImageUrl;
+    private String linkDescription;
 
-    public ExternalLinks(String linkUrl, String linkPostedBy) {
-        this.linkUrl = linkUrl;
-        this.linkPostedBy = linkPostedBy;
+    public ExternalLinks() {
     }
-
-    public ExternalLinks(String linkUrl, String linkPostedBy, String linkImageUrl) {
+    public ExternalLinks(String linkUrl, String linkPostedBy,String linkDescription) {
         this.linkUrl = linkUrl;
         this.linkPostedBy = linkPostedBy;
-        this.linkImageUrl = linkImageUrl;
+        this.linkDescription = linkDescription;
     }
 
     public String getLinkUrl() {
@@ -36,11 +33,11 @@ public class ExternalLinks {
         this.linkPostedBy = linkPostedBy;
     }
 
-    public String getLinkImageUrl() {
-        return linkImageUrl;
+    public String getLinkDescription() {
+        return linkDescription;
     }
 
-    public void setLinkImageUrl(String linkImageUrl) {
-        this.linkImageUrl = linkImageUrl;
+    public void setLinkDescription(String linkDescription) {
+        this.linkDescription = linkDescription;
     }
 }

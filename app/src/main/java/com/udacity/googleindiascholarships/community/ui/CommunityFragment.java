@@ -1,7 +1,10 @@
 package com.udacity.googleindiascholarships.community.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.udacity.googleindiascholarships.R;
+import com.udacity.googleindiascholarships.projects.ui.CreateProjectActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +34,15 @@ public class CommunityFragment extends android.support.v4.app.Fragment{
         getActivity().setTitle("Community");
         tabLayout = (TabLayout) rootView.findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+        FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Add details to share your link", Snackbar.LENGTH_LONG).show();
+                Intent intent = new Intent(getContext(), ShareLinkActivity.class);
+                startActivity(intent);
+            }
+        });
         return rootView;
     }
 

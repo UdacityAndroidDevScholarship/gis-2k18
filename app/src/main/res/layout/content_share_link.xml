@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.udacity.googleindiascholarships.projects.ui.CreateProjectActivity"
+    tools:showIn="@layout/activity_share_link">
+
+    <EditText
+        android:id="@+id/link_shared_by"
+        android:hint="Link Shared By"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/link_url"
+        android:hint="Link URL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/link_description"
+        android:hint="Link Description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/blog_or_resources_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"/>
+
+    <Button
+        android:id="@+id/save_to_firebase_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="POST"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|right"
+        android:indeterminate="true"
+        android:visibility="invisible"/>
+
+</LinearLayout>

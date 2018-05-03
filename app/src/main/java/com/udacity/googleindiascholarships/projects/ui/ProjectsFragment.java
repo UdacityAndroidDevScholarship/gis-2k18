@@ -1,7 +1,10 @@
 package com.udacity.googleindiascholarships.projects.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,14 +17,11 @@ import com.udacity.googleindiascholarships.projects.entities.Project;
 
 import java.util.ArrayList;
 
-/**
- * Created by jha.anuj.2108 on 13-04-2018.
- */
-
 public class ProjectsFragment extends android.support.v4.app.Fragment {
 
     RecyclerView projectsRecyclerView;
     ArrayList<Project> projectList;
+    FloatingActionButton createProjectBtn;
 
     @Nullable
     @Override
@@ -30,7 +30,15 @@ public class ProjectsFragment extends android.support.v4.app.Fragment {
         View rootView = inflater.inflate(R.layout.fragment_projects, container, false);
 
         projectsRecyclerView = rootView.findViewById(R.id.projectsRecyclerView);
-        projectsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        createProjectBtn = rootView.findViewById(R.id.create_projects_fab_btn);
+        projectsRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
+        createProjectBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(),CreateProjectActivity.class);
+                startActivity(intent);
+            }
+        });
 
         projectList = new ArrayList<Project>();
         projectList.add(new Project("GIS APP", R.drawable.gis_placeholder));

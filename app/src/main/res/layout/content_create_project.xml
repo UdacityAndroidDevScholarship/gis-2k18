@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.udacity.googleindiascholarships.projects.ui.CreateProjectActivity"
+    tools:showIn="@layout/activity_create_project">
+
+    <EditText
+        android:id="@+id/project_name"
+        android:hint="Project Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/project_description"
+        android:hint="Project Description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/project_logo"
+        android:hint="Project Logo link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/project_github_url"
+        android:hint="Project Github Link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/save_to_firebase_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save to firebase"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|right"
+        android:indeterminate="true"
+        android:visibility="invisible"/>
+    
+</LinearLayout>

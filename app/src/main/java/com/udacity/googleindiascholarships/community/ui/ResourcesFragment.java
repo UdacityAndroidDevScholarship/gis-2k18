@@ -8,9 +8,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.udacity.googleindiascholarships.R;
 import com.udacity.googleindiascholarships.community.ui.adapter.BlogAdapter;
+import com.udacity.googleindiascholarships.community.ui.entities.ExternalLinks;
+import com.udacity.googleindiascholarships.utils.Constants;
 
 import java.util.ArrayList;
 
@@ -22,6 +30,7 @@ public class ResourcesFragment extends Fragment {
 
     private RecyclerView resourcesRecyclerView;
     private ArrayList<ExternalLinks> resourcesLinks;
+    private BlogAdapter blogAdapter;
 
     public ResourcesFragment() {
         // Required empty public constructor
@@ -36,19 +45,36 @@ public class ResourcesFragment extends Fragment {
         resourcesRecyclerView = rootView.findViewById(R.id.blogs_recyclerView);
         resourcesRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         resourcesLinks = new ArrayList<ExternalLinks>();
-        loadData();
-        BlogAdapter linkPreviewAdapter = new BlogAdapter(getContext(), resourcesLinks);
-        resourcesRecyclerView.setAdapter(linkPreviewAdapter);
+        readFromFirebase();
+        blogAdapter = new BlogAdapter(getContext(),resourcesLinks);
+        resourcesRecyclerView.setAdapter(blogAdapter);
         return rootView;
     }
-    private void loadData() {
-        resourcesLinks.add(new ExternalLinks("https://github.com/UdacityAndroidDevScholarship/gis-2k18/issues/14","Rajat Kumar Gupta"));
-        resourcesLinks.add(new ExternalLinks("https://github.com/UdacityAndroidDevScholarship/gis-2k18/issues/14","Vishal Sehgal"));
-        resourcesLinks.add(new ExternalLinks("https://github.com/UdacityAndroidDevScholarship/gis-2k18/issues/14","Shubham Soni"));
-        resourcesLinks.add(new ExternalLinks("https://github.com/UdacityAndroidDevScholarship/gis-2k18/issues/14","Anuj Jha"));
-        resourcesLinks.add(new ExternalLinks("https://github.com/UdacityAndroidDevScholarship/gis-2k18/issues/14","Akshit Jain"));
-        resourcesLinks.add(new ExternalLinks("https://github.com/UdacityAndroidDevScholarship/gis-2k18/issues/14","Rajat Kumar Gupta"));
+
+    private void readFromFirebase() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance(Constants.DATABASE_URL);
+        DatabaseReference mExternalResourcesRef = database.getReference("external_resources").child("resources");
+        mExternalResourcesRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+
+                resourcesLinks.clear();
+                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+                    ExternalLinks currentResource = postSnapshot.getValue(ExternalLinks.class);
+                    resourcesLinks.add(currentResource);
+                }
+
+                blogAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getMessage());
+                Toast.makeText(getActivity(), "Network Error", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
+
 
 }
