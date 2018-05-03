@@ -86,19 +86,19 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onStart() {
         super.onStart();
-<<<<<<< HEAD
+
 //        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 //        if(firebaseAuth.getCurrentUser()==null){
 //            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
 //            startActivity(intent);
 //        }
-=======
+
 //         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 //         if(firebaseAuth.getCurrentUser()==null){
 //             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
 //             startActivity(intent);
 //         }
->>>>>>> upstream/master
+
     }
     private void setIvNavHeader(String text) {
 
