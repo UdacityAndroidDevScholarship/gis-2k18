@@ -26,7 +26,7 @@ For contributing to this repository follow following steps:
     * If you are still working on PR. Label it (Work in Progress) and Add TODO's in the description (How to do that given at end of doc) and keep marking once done.
 
 3. Follow coding Standards:
-    * Follow coding standards provide at https://github.com/ribot/android-guidelines/blob/master/project_and_code_guidelines.md
+    * Follow coding standards provide at  https://blog.mindorks.com/android-code-style-and-guidelines-d5f80453d5c7
 
 #### Creating TODO's in PR:
 
