@@ -141,4 +141,9 @@
     <string name="title_activity_share_link">ShareLinkActivity</string>
     <string name="default_description">Sample Description</string>
 
+    <string name="project_github_url">Project Github Url</string>
+    <string name="project_name">Project Name</string>
+    <string name="project_logo_url">Project Logo Url</string>
+    <string name="project_description">Project Description</string>
+
 </resources>

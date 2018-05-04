@@ -44,10 +44,10 @@
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="8dp"
                         android:layout_weight="1"
                         android:text="Google India Scholarship 2018(GIS app)"
-                        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+                        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
                         android:textColor="@color/black"
                         android:textStyle="bold" />
 
@@ -59,6 +59,7 @@
                         android:orientation="vertical">
 
                         <ImageView
+                            android:layout_marginTop="8dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
@@ -72,6 +73,7 @@
 
 
                 <Button
+                    android:id="@+id/projectLinkButton"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
                     android:layout_gravity="end"

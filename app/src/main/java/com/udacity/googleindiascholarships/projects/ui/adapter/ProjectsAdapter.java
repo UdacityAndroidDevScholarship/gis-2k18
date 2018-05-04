@@ -68,10 +68,15 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Projec
                     Context context = view.getContext();
                     int position = getAdapterPosition();
                     Intent intent = new Intent(view.getContext(), ProjectDetails.class);
+                    intent.putExtra("project_github_url",mListItems.get(position).getProject_github_url());
+                    intent.putExtra("project_description",mListItems.get(position).getProject_description());
+                    intent.putExtra("project_logo_url",mListItems.get(position).getProject_logo_url());
+                    intent.putExtra("project_name",mListItems.get(position).getProject_name());
                     context.startActivity(intent);
 
                 }
             });
+
 
 
         }
