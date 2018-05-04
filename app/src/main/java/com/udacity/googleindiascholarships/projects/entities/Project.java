@@ -12,7 +12,7 @@ public class Project {
 
 
     public Project(){
-        
+
     }
 
     public Project(String project_name, String project_description, String project_logo_url, String project_github_url) {
