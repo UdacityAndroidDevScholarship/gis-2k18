@@ -37,8 +37,8 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Projec
     @Override
     public void onBindViewHolder(final ProjectsCardViewHolder holder, int position) {
         final Project listItem = mListItems.get(position);
-        holder.projectNameTextView.setText(listItem.getName());
-        holder.projectImageView.setImageResource(listItem.getPlaceHolderImage());
+        holder.projectNameTextView.setText(listItem.getProject_name());
+        //holder.projectImageView.setImageResource(listItem.getPlaceHolderImage());
 
     }
 

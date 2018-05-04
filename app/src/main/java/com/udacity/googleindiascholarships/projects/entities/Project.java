@@ -2,23 +2,28 @@ package com.udacity.googleindiascholarships.projects.entities;
 
 public class Project {
 
-    private String name;
-    private String description;
-    private String githubLink;
-    private String pathToImage;
+    private String project_name;
+    private String project_description;
+    private String project_logo_url;
+    private String project_github_url;
     private int placeHolderImage;
 
     private int contactImage;
 
-    public Project(String name, String description, String githubLink, String pathToImage) {
-        this.name = name;
-        this.description = description;
-        this.githubLink = githubLink;
-        this.pathToImage = pathToImage;
+
+    public Project(){
+        
     }
 
-    public Project(String name, int placeholderImage) {
-        this.name = name;
+    public Project(String project_name, String project_description, String project_logo_url, String project_github_url) {
+        this.project_name = project_name;
+        this.project_description = project_description;
+        this. project_logo_url =  project_logo_url;
+        this.project_github_url = project_github_url;
+    }
+
+    public Project(String project_name, int placeholderImage) {
+        this.project_name = project_name;
         this.placeHolderImage = placeholderImage;
 
     }
@@ -35,35 +40,20 @@ public class Project {
         return placeHolderImage;
     }
 
-    public String getName() {
-        return name;
+
+    public String getProject_github_url() {
+        return project_github_url;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getProject_logo_url() {
+        return project_logo_url;
     }
 
-    public String getDescription() {
-        return description;
+    public String getProject_description() {
+        return project_description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getGithubLink() {
-        return githubLink;
-    }
-
-    public void setGithubLink(String githubLink) {
-        this.githubLink = githubLink;
-    }
-
-    public String getPathToImage() {
-        return pathToImage;
-    }
-
-    public void setPathToImage(String pathToImage) {
-        this.pathToImage = pathToImage;
+    public String getProject_name() {
+        return project_name;
     }
 }
