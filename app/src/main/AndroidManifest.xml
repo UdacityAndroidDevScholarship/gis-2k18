@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -34,6 +35,16 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.udacity.googleindiascholarships"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+
         <activity
             android:name=".members.ui.Phase1Activity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -47,6 +58,9 @@
             android:name=".projects.ui.ProjectDetails"
             android:label="@string/title_activity_project_details"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".members.ui.EditProfileActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".members.ui.ProfilePictureDisplayActivity"/>
         <activity
             android:name=".projects.ui.CreateProjectActivity"
             android:label="@string/title_activity_create_project"

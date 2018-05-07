@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_img_pick_dialog_view"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:textColor="@color/white"
+        android:background="@drawable/dialog_button_states"
+        android:text="View current photo"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:drawableStart="@drawable/ic_eye"/>
+
+    <Button
+        android:id="@+id/btn_img_pick_dialog_camera"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:textColor="@color/white"
+        android:background="@drawable/dialog_button_states"
+        android:text="Take new photo"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:drawableStart="@drawable/ic_camera"/>
+
+    <Button
+        android:id="@+id/btn_img_pick_dialog_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:textColor="@color/white"
+        android:background="@drawable/dialog_button_states"
+        android:text="Select from gallery"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:drawableStart="@drawable/ic_gallery"/>
+</LinearLayout>

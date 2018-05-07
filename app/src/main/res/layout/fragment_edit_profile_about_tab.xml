@@ -5,28 +5,28 @@
     android:orientation="vertical"
     tools:context="com.udacity.googleindiascholarships.members.ui.ProfileAboutTabFragment">
 
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="vertical"
-      android:padding="10dp"
-      android:background="#F1F9FF">
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="Short Description"
-          android:textColor="@color/darkBlue"
-          android:textStyle="bold"
-          android:paddingLeft="5dp"
-          android:paddingTop="5dp"
-          android:textSize="16sp"/>
-      <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="@string/profile_short_description_sample"
-          android:textColor="#2175BC"
-          android:padding="5dp" />
-  </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="#F1F9FF">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Short Description"
+            android:textColor="@color/darkBlue"
+            android:textStyle="bold"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:textSize="16sp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_short_description_sample"
+            android:textColor="#2175BC"
+            android:padding="5dp" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,7 +43,7 @@
             android:paddingLeft="5dp"
             android:paddingTop="5dp"
             android:textSize="16sp"/>
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/profile_skills_sample"

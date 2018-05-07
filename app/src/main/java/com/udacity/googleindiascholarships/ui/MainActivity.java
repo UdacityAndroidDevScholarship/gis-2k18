@@ -27,10 +27,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.udacity.googleindiascholarships.R;
 import com.udacity.googleindiascholarships.challenges.ui.ChallengesFragment;
 import com.udacity.googleindiascholarships.community.ui.CommunityFragment;
+import com.udacity.googleindiascholarships.members.ui.EditProfileActivity;
 import com.udacity.googleindiascholarships.members.ui.MembersFragment;
+import com.udacity.googleindiascholarships.members.ui.ProfileActivity;
 import com.udacity.googleindiascholarships.projects.ui.ProjectsFragment;
 import com.udacity.googleindiascholarships.quizzes.ui.QuizzesFragment;
 import com.udacity.googleindiascholarships.stories.ui.StoriesFragment;
+import com.udacity.googleindiascholarships.utils.Constants;
 
 import java.util.Arrays;
 
@@ -177,6 +180,11 @@ public class MainActivity extends AppCompatActivity
 
         switch (id){
 
+            case R.id.nav_user_profile:
+                Intent profileActivityIntent = new Intent(this, ProfileActivity.class);
+                profileActivityIntent.putExtra(Constants.PROFILE_ACTIVITY_EDITABLE_KEY, true);
+                startActivity(profileActivityIntent);
+                break;
             case R.id.nav_members:
                 fragment = new MembersFragment();
                 break;
