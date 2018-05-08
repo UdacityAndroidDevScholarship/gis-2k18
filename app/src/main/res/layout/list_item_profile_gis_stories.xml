@@ -34,7 +34,7 @@
                     android:id="@+id/iv_profile_gis_story_profile_pic"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/gis_logo"
+                    android:src="@drawable/ic_gis_logo"
                     android:layout_centerVertical="true"/>
 
                 <TextView

@@ -16,7 +16,7 @@
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout_projectLogo"
-            android:background="@drawable/gis_logo"
+            android:background="@drawable/ic_gis_logo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"

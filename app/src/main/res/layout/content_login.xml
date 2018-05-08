@@ -14,7 +14,7 @@
         android:id="@+id/gis_logo_img"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/gis_logo"
+        android:src="@drawable/ic_gis_logo"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/app_name"/>
 

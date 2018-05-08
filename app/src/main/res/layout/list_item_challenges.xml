@@ -25,7 +25,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_centerVertical="true"
-                android:src="@drawable/gis_logo" />
+                android:src="@drawable/ic_gis_logo" />
 
             <TextView
                 android:id="@+id/tv_author_name_challenges"

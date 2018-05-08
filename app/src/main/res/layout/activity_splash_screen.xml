@@ -13,7 +13,7 @@
         android:layout_height="@dimen/splash_icon_height_width"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/splash_icon_margin_top"
-        android:src="@drawable/ic_launcher"/>
+        android:src="@drawable/ic_gis_logo"/>
 
     <TextView
         android:id="@+id/tv_app_name"
