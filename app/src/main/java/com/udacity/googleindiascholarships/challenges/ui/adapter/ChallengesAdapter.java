@@ -34,7 +34,7 @@ public class ChallengesAdapter extends RecyclerView.Adapter<ChallengesAdapter.Ch
     @Override
     public void onBindViewHolder(final ChallengesAdapter.ChallengesCardViewHolder holder, int position) {
         final Challenge listItem = mListItems.get(position);
-        holder.challengeAuthorNameTextView.setText(listItem.getAuthorNameChallenge());
+        holder.challengeAuthorNameTextView.setText(listItem.getChallenge_author());
         // holder.projectImageView.setImageResource(listItem.getPlaceHolderImage());
     }
 

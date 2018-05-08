@@ -144,5 +144,6 @@
     <string name="project_name">Project Name</string>
     <string name="project_logo_url">Project Logo Url</string>
     <string name="project_description">Project Description</string>
+    <string name="title_activity_challenges_details">ChallengesDetails</string>
 
 </resources>
