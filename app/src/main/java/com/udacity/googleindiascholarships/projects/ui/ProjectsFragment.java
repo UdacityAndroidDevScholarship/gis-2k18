@@ -60,12 +60,6 @@ public class ProjectsFragment extends android.support.v4.app.Fragment {
             }
         });
 
-       /* projectList = new ArrayList<Project>();
-        projectList.add(new Project("GIS APP", R.drawable.gis_placeholder));
-        projectList.add(new Project("EXPLORE INDIA", R.drawable.explore_india_placeholder));
-        projectList.add(new Project("QUIZ APP", R.drawable.quiz_placeholder));
-        projectList.add(new Project("BLOOD DONATION", R.drawable.blooddonation_placholder));*/
-
         readProjectsFirebase();
 
         return rootView;
@@ -84,9 +78,7 @@ public class ProjectsFragment extends android.support.v4.app.Fragment {
 
                     Project project = projectSnapshot.getValue(Project.class);
                     projectList.add(project);
-
                 }
-
                 projectsAdapter = new ProjectsAdapter(getContext(), projectList);
                 projectsRecyclerView.setAdapter(projectsAdapter);
 
@@ -100,8 +92,7 @@ public class ProjectsFragment extends android.support.v4.app.Fragment {
 
 
     }
-
-
+    
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {

@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 import com.udacity.googleindiascholarships.R;
+import com.udacity.googleindiascholarships.projects.entities.ContactModerator;
 import com.udacity.googleindiascholarships.projects.entities.Project;
 import com.udacity.googleindiascholarships.projects.ui.ProjectDetails;
 
@@ -21,10 +23,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactCardViewHolder> {
 
     public Context mContext;
-    public List<Project> mListItems;
-    public ArrayList<Project> mProjectListItems;
+    public List<ContactModerator> mListItems;
+    public ArrayList<ContactModerator> mProjectListItems;
 
-    public ContactAdapter(Context context, List<Project> mListItems) {
+    public ContactAdapter(Context context, List<ContactModerator> mListItems) {
         mContext = context;
         this.mListItems = mListItems;
     }
@@ -38,9 +40,10 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactC
 
     @Override
     public void onBindViewHolder(final ContactCardViewHolder holder, int position) {
-        final Project listItem = mListItems.get(position);
+        final ContactModerator listItem = mListItems.get(position);
 
-        holder.contactImageView.setImageResource(listItem.getPlaceHolderImage());
+       // holder.contactImageView.setImageResource(listItem.getPlaceHolderImage());
+        Picasso.with(mContext).load(listItem.getMod_profile()).into(holder.contactImageView);
 
     }
 

@@ -66,7 +66,6 @@
                             android:padding="10dp"
                             android:src="@drawable/ic_favorite" />
 
-
                     </LinearLayout>
 
                 </LinearLayout>
@@ -128,11 +127,23 @@
                     android:textStyle="bold" />
 
 
-                <fragment
-                    android:id="@+id/contact_fragments"
-                    android:name="com.udacity.googleindiascholarships.projects.ui.ContactFragment"
+                <FrameLayout
+                    android:id="@+id/contactFragment_Container"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp" />
+                    android:layout_height="wrap_content">
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_contactRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+                    </android.support.v7.widget.RecyclerView>
+
+
+                </FrameLayout>
+
+
+
 
                 <View
                     android:layout_width="fill_parent"
