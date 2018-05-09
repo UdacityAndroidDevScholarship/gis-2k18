@@ -20,4 +20,9 @@
     <style name="CircularProgress" parent="Theme.AppCompat.Light">
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <!--Progress Dialog Theme-->
+    <style name="AppTheme.Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:textColorSecondary">@android:color/black</item>
+    </style>
 </resources>

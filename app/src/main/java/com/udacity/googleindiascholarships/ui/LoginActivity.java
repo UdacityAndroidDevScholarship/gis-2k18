@@ -1,5 +1,6 @@
 package com.udacity.googleindiascholarships.ui;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -37,7 +38,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private String TAG = "LoginActivty";
     private FirebaseAuth mAuth;
     private SignInButton googleSignInBtn;
-    private ProgressBar progressBar;
+
+    private ProgressDialog mProgressDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +49,13 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         signInBtn = (Button) findViewById(R.id.sign_in_btn);
-        progressBar = (ProgressBar) findViewById(R.id.sign_in_progress);
+        // Init Progress Dialog
+        mProgressDialog = new ProgressDialog(LoginActivity.this,
+                R.style.AppTheme_Dialog);
+        //  Setting Some Option of the mProgressDialog
+        mProgressDialog.setIndeterminate(true);
+        mProgressDialog.setMessage("Authenticating...");
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -73,7 +82,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             @Override
             public void onClick(View view) {
                 googleSignInBtn.setEnabled(false);
-                progressBar.setVisibility(View.VISIBLE);
+                mProgressDialog.show();
                 signIn();
             }
         });
@@ -120,6 +129,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 Log.i(TAG, "onActivityResult: "+result.getStatus().getStatusMessage());
                 // [END_EXCLUDE]
             }
+            hideProgress();
         }
     }
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
@@ -136,7 +146,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
 
                             Toast.makeText(LoginActivity.this, "Signed in", Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.GONE);
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
 
@@ -145,7 +154,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                             Toast.makeText(LoginActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
-
+                        // The Hide Progress Bar Always Called After Request Completion
+                        hideProgress();
                     }
                 });
     }
@@ -154,6 +164,22 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         Log.d(TAG, "onConnectionFailed:" + connectionResult);
         Toast.makeText(this, "Google Play Services error.", Toast.LENGTH_SHORT).show();
     }
+
+
+    /**
+     * This Function Will Visible The Progress Dialog
+     */
+    private void showProgress(){
+        mProgressDialog.show();
+    }
+
+    /**
+     * This Function Will Hide The Progress Dialog
+     */
+    private void hideProgress(){
+        mProgressDialog.hide();
+    }
+
 }
 
 

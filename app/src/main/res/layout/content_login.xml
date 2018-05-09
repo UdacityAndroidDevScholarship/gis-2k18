@@ -111,13 +111,5 @@
         android:textAllCaps="false"
         android:layout_centerInParent="true"/>
 
-    <ProgressBar
-        android:id="@+id/sign_in_progress"
-        android:layout_centerInParent="true"
-        android:theme="@style/CircularProgress"
-        style="@style/Widget.AppCompat.ProgressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        />
+    <!-- Removed Process Bar Will Add Programmatically  -->
 </RelativeLayout>
