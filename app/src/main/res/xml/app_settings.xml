@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreferenceCompat
+        android:title="@string/pref_notification_title"
+        android:key="@string/pref_notification_key"
+        android:summaryOn="@string/pref_notification_summary_on"
+        android:summaryOff="@string/pref_notification_summary_off" />
+
+
+    <com.udacity.googleindiascholarships.ui.SignOutDialogPreference
+        android:title="@string/pref_dialog_title_label"
+        android:dialogIcon="@drawable/gis_logo"
+        android:textColor="@color/white"/>
+
+</PreferenceScreen>

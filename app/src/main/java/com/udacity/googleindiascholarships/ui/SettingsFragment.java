@@ -1,31 +1,42 @@
 package com.udacity.googleindiascholarships.ui;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.support.v4.app.DialogFragment;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceFragmentCompat;
 
 import com.udacity.googleindiascholarships.R;
 
 /**
- * Created by jha.anuj.2108 on 13-04-2018.
+ * Created by Sudhanshu on 09-05-2018.
  */
 
-public class SettingsFragment extends android.support.v4.app.Fragment{
+public class SettingsFragment extends PreferenceFragmentCompat{
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
-        return rootView;
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        addPreferencesFromResource(R.xml.app_settings);
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void onDisplayPreferenceDialog(Preference preference) {
+        // Try if the preference is one of our custom Preferences
+        DialogFragment dialogFragment = null;
+        if (preference instanceof SignOutDialogPreference) {
+            // Create a new instance of SignOutPreferenceFragmentCompat with the key of the related
+            // Preference
+            dialogFragment = SignOutPreferenceFragmentCompat
+                    .newInstance(preference.getKey());
+        }
 
-        getActivity().setTitle("Settings");
+        if (dialogFragment != null) {
+            dialogFragment.setTargetFragment(this, 0);
+            dialogFragment.show(this.getFragmentManager(),
+                    "android.support.v7.preference" +
+                            ".PreferenceFragment.DIALOG");
+        }
+        else {
+            super.onDisplayPreferenceDialog(preference);
+        }
     }
 }
