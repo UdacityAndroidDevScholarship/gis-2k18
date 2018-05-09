@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -24,7 +25,10 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.udacity.googleindiascholarships.R;
@@ -36,7 +40,7 @@ import java.io.IOException;
 
 public class EditProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ConstraintLayout profilePictureEditLayout;
+    ImageButton btnProfilePictureEdit;
     AlertDialog imagePickDialog;
     private final static int PICK_IMAGE_CODE = 123;
     private final static int TAKE_PICTURE_CODE = 133;
@@ -49,15 +53,22 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     TabLayout tabLayout;
     Toolbar toolbar;
     FloatingActionButton editProfileButton;
+    ImageButton btnEditUserProfileView;
+    EditText etUserName, etUserShortDescription;
+    boolean userProfileEditFlag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
 
-        profilePictureEditLayout = (ConstraintLayout) findViewById(R.id.cl_edit_profile_pic);
-        profilePictureEditLayout.setClickable(true);
-        profilePictureEditLayout.setOnClickListener(this);
+        btnEditUserProfileView = (ImageButton) findViewById(R.id.btn_edit_user_profile);
+        btnProfilePictureEdit = (ImageButton) findViewById(R.id.ib_edit_profile_pic);
+        etUserName = (EditText) findViewById(R.id.et_user_name);
+        etUserShortDescription = (EditText) findViewById(R.id.et_edit_user_short_description);
+
+        btnEditUserProfileView.setOnClickListener(this);
+        btnProfilePictureEdit.setOnClickListener(this);
 
         viewPager = (ViewPager) findViewById(R.id.vp_edit_profile);
         tabLayout = (TabLayout) findViewById(R.id.tl_edit_profile);
@@ -68,7 +79,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         setSupportActionBar(toolbar);
 
         if(getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("Edit Profile");
+            getSupportActionBar().setTitle("");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
@@ -102,7 +113,26 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.cl_edit_profile_pic:
+            case R.id.btn_edit_user_profile:
+                if (!userProfileEditFlag) {
+                    userProfileEditFlag = true;
+                    btnProfilePictureEdit.setVisibility(View.VISIBLE);
+                    etUserName.setFocusableInTouchMode(true);
+                    etUserShortDescription.setFocusableInTouchMode(true);
+                    etUserName.setBackgroundColor(getResources().getColor(R.color.color_overlay_black));
+                    etUserShortDescription.setBackgroundColor(getResources().getColor(R.color.color_overlay_black));
+                    btnEditUserProfileView.setImageResource(R.drawable.ic_tick_save);
+                } else {
+                    userProfileEditFlag = false;
+                    btnProfilePictureEdit.setVisibility(View.GONE);
+                    etUserName.setFocusable(false);
+                    etUserShortDescription.setFocusable(false);
+                    etUserName.setBackgroundColor(Color.TRANSPARENT);
+                    etUserShortDescription.setBackgroundColor(Color.TRANSPARENT);
+                    btnEditUserProfileView.setImageResource(R.drawable.ic_edit_black_24dp);
+                }
+                break;
+            case R.id.ib_edit_profile_pic:
                 AlertDialog.Builder imagePickerDialog = new AlertDialog.Builder(this);
                 LayoutInflater layoutInflater = getLayoutInflater();
                 View dialogView = layoutInflater.inflate(R.layout.dialog_profile_image_picker, null);

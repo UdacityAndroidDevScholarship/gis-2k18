@@ -180,11 +180,6 @@ public class MainActivity extends AppCompatActivity
 
         switch (id){
 
-            case R.id.nav_user_profile:
-                Intent profileActivityIntent = new Intent(this, ProfileActivity.class);
-                profileActivityIntent.putExtra(Constants.PROFILE_ACTIVITY_EDITABLE_KEY, true);
-                startActivity(profileActivityIntent);
-                break;
             case R.id.nav_members:
                 fragment = new MembersFragment();
                 break;
@@ -202,6 +197,11 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_community:
                 fragment = new CommunityFragment();
+                break;
+            case R.id.nav_user_profile:
+                Intent profileActivityIntent = new Intent(this, EditProfileActivity.class);
+
+                startActivity(profileActivityIntent);
                 break;
             case R.id.nav_settings:
                 fragment = new SettingsFragment();

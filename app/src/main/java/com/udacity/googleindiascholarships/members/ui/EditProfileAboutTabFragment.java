@@ -5,6 +5,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.udacity.googleindiascholarships.R;
 
@@ -13,6 +16,13 @@ import com.udacity.googleindiascholarships.R;
  */
 
 public class EditProfileAboutTabFragment extends Fragment {
+
+    private boolean editSkillFlag = false, editDescriptionFlag = false;
+    EditText etUserSkills;
+    ImageButton btnUserSkillEdit;
+    EditText etUserDescription;
+    ImageButton btnUserDescriptionEdit;
+
 
     public EditProfileAboutTabFragment() {
         // Required empty public constructor
@@ -23,6 +33,55 @@ public class EditProfileAboutTabFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_edit_profile_about_tab, container, false);
+        View view = inflater.inflate(R.layout.fragment_edit_profile_about_tab, container, false);
+
+        etUserSkills = view.findViewById(R.id.et_user_skills);
+        btnUserSkillEdit = view.findViewById(R.id.btn_user_skill_edit);
+
+        etUserDescription = view.findViewById(R.id.et_user_description_edit);
+        btnUserDescriptionEdit = view.findViewById(R.id.btn_user_description_edit);
+
+        setupButtonClickListenersForAboutSection();
+
+        return view;
+    }
+
+    private void setupButtonClickListenersForAboutSection() {
+
+        btnUserSkillEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!editSkillFlag) {
+                    etUserSkills.setFocusableInTouchMode(true);
+                    etUserSkills.setEnabled(true);
+                    btnUserSkillEdit.setImageResource(R.drawable.ic_tick_save);
+                    editSkillFlag = true;
+                } else {
+                    etUserSkills.setFocusable(false);
+                    etUserSkills.setEnabled(false);
+                    btnUserSkillEdit.setImageResource(R.drawable.ic_edit_black_24dp);
+                    editSkillFlag = false;
+
+                }
+            }
+        });
+
+        btnUserDescriptionEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!editDescriptionFlag) {
+                    etUserDescription.setFocusableInTouchMode(true);
+                    etUserDescription.setEnabled(true);
+                    btnUserDescriptionEdit.setImageResource(R.drawable.ic_tick_save);
+                    editDescriptionFlag = true;
+                } else {
+                    etUserDescription.setFocusable(false);
+                    etUserDescription.setEnabled(false);
+                    btnUserDescriptionEdit.setImageResource(R.drawable.ic_edit_black_24dp);
+                    editDescriptionFlag = false;
+
+                }
+            }
+        });
     }
 }

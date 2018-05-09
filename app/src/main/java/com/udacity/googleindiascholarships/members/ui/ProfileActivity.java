@@ -22,7 +22,6 @@ public class ProfileActivity extends AppCompatActivity {
     TabLayout tabsProfile;
     Toolbar toolbar;
     CollapsingToolbarLayout collapsingToolbarLayoutProfile;
-    FloatingActionButton editProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,21 +32,7 @@ public class ProfileActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         vpProfile = (ViewPager) findViewById(R.id.vpProfile);
         tabsProfile = (TabLayout)findViewById(R.id.tabsProfile);
-        editProfile = (FloatingActionButton) findViewById(R.id.fab_edit_profile);
 
-        if(getIntent() != null){
-            if(getIntent().hasExtra(Constants.PROFILE_ACTIVITY_EDITABLE_KEY)){
-                boolean editable = getIntent().getBooleanExtra(Constants.PROFILE_ACTIVITY_EDITABLE_KEY, false);
-                if(editable){
-                    editProfile.setVisibility(View.VISIBLE);
-                }else {
-                    editProfile.setVisibility(View.GONE);
-                }
-            }else{
-                // Not editable as no extra constant has been passed
-                editProfile.setVisibility(View.GONE);
-            }
-        }
 
         if(getSupportActionBar()!=null) {
             getSupportActionBar().setTitle("Phase 1");
@@ -56,13 +41,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         collapsingToolbarLayoutProfile = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar_layout_profile);
 
-        editProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent editProfileIntent = new Intent(ProfileActivity.this, EditProfileActivity.class);
-                startActivity(editProfileIntent);
-            }
-        });
         vpProfile.setOffscreenPageLimit(3);
         setupViewPager();
         tabsProfile.setupWithViewPager(vpProfile);

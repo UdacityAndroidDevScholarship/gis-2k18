@@ -27,61 +27,62 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="48dp"
-                android:layout_marginTop="?attr/actionBarSize"
                 android:orientation="vertical"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:layout_marginBottom="@dimen/triple_margin"
                 app:layout_collapseMode="parallax">
 
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/cl_edit_profile_pic"
-                    android:layout_width="match_parent"
+                <FrameLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/profile_image_press_states">
+                    android:layout_gravity="center">
 
-                    <android.support.design.widget.FloatingActionButton
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginBottom="8dp"
-                        android:src="@drawable/ic_edit"
-                        app:backgroundTint="@color/white"
-                        app:fabSize="mini"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintRight_toRightOf="@id/iv_user_profile"
-                        tools:layout_editor_absoluteX="242dp" />
-
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/iv_user_profile"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:background="@drawable/gis_logo"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </android.support.constraint.ConstraintLayout>
+                        android:src="@drawable/gis_logo"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@color/color_overlay_black"/>
+
+                    <ImageButton
+                        android:id="@+id/ib_edit_profile_pic"
+                        android:layout_gravity="bottom|right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_add_a_photo_black_24dp"
+                        android:background="@color/material_red"
+                        android:tint="@color/white"
+                        android:visibility="gone"/>
+                </FrameLayout>
 
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
                     android:padding="2dp"
-                    android:text="Vineeth Reddy"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/white"
-                    android:textColor="@color/darkBlue"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <EditText
+                    android:id="@+id/et_user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@string/text_user_name"
+                    android:textColor="@color/lightWhite"
+                    android:textSize="@dimen/sp_standard_size"
+                    android:textStyle="bold"
+                    android:layout_margin="4dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="@color/white"
-                    android:layout_marginTop="5dp"
+                    android:background="@android:color/transparent"
+                    android:focusable="false"/>
+
+                <EditText
+                    android:padding="2dp"
+                    android:id="@+id/et_edit_user_short_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Android Developer"
-                    android:textColor="@color/darkBlue"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@android:color/transparent"
+                    android:focusable="false"/>
             </LinearLayout>
 
             <android.support.v7.widget.Toolbar
@@ -102,6 +103,17 @@
                 app:tabIndicatorColor="@color/orange"
                 app:tabSelectedTextColor="@android:color/white"
                 app:tabTextColor="@color/white" />
+
+            <ImageButton
+                android:id="@+id/btn_edit_user_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_margin="16dp"
+                android:background="@android:color/transparent"
+                android:padding="4dp"
+                android:src="@drawable/ic_edit_black_24dp"
+                android:tint="@color/white"/>
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
