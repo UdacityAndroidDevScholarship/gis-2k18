@@ -23,6 +23,7 @@ public class Phase2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_phase2);
 
         toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         if(getSupportActionBar()!=null) {
             getSupportActionBar().setTitle("Phase 2");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

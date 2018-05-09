@@ -58,10 +58,10 @@
             android:name=".projects.ui.ProjectDetails"
             android:label="@string/title_activity_project_details"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".members.ui.EditProfileActivity"
+        <activity android:name=".currentuser.ui.UserDetailsActivity"
             android:windowSoftInputMode="adjustPan"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".members.ui.ProfilePictureDisplayActivity"/>
+        <activity android:name=".currentuser.ui.ProfilePictureDisplayActivity"/>
         <activity
             android:name=".projects.ui.CreateProjectActivity"
             android:label="@string/title_activity_create_project"

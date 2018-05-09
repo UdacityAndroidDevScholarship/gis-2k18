@@ -1,4 +1,4 @@
-package com.udacity.googleindiascholarships.members.ui;
+package com.udacity.googleindiascholarships.currentuser.ui;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -10,7 +10,6 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
@@ -28,17 +27,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.udacity.googleindiascholarships.R;
+import com.udacity.googleindiascholarships.currentuser.utils.RoundedImg;
 import com.udacity.googleindiascholarships.members.ui.adapters.ProfileViewPagerAdapter;
 import com.udacity.googleindiascholarships.utils.Constants;
 
 import java.io.File;
 import java.io.IOException;
 
-public class EditProfileActivity extends AppCompatActivity implements View.OnClickListener {
+public class UserDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton btnProfilePictureEdit;
     AlertDialog imagePickDialog;
@@ -60,7 +59,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile);
+        setContentView(R.layout.activity_user_details);
 
         btnEditUserProfileView = (ImageButton) findViewById(R.id.btn_edit_user_profile);
         btnProfilePictureEdit = (ImageButton) findViewById(R.id.ib_edit_profile_pic);
@@ -104,9 +103,9 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
 
     private void setUpViewPager() {
         ProfileViewPagerAdapter adapter = new ProfileViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new EditProfileAboutTabFragment(), "About");
-        adapter.addFragment(new EditProfileGISTabFragment(), "GIS");
-        adapter.addFragment(new EditProfileProjectsTabFragment(), "Projects");
+        adapter.addFragment(new UserDetailsAboutTabFragment(), "About");
+        adapter.addFragment(new UserDetailsGISTabFragment(), "GIS");
+        adapter.addFragment(new UserDetailsProjectsTabFragment(), "Projects");
         viewPager.setAdapter(adapter);
     }
 
@@ -152,7 +151,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
                 if(imagePickDialog.isShowing()){
                     imagePickDialog.cancel();
                 }
-                Intent profileDisplay = new Intent(EditProfileActivity.this, ProfilePictureDisplayActivity.class);
+                Intent profileDisplay = new Intent(UserDetailsActivity.this, ProfilePictureDisplayActivity.class);
                 if(clickedPicture) {
                     profileDisplay.putExtra("IMAGE_URI", mCurrentPhotoPath);
                 }else{

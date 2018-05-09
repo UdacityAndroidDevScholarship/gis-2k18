@@ -1,4 +1,4 @@
-package com.udacity.googleindiascholarships.members.ui;
+package com.udacity.googleindiascholarships.currentuser.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,15 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.udacity.googleindiascholarships.R;
-import com.udacity.googleindiascholarships.members.ui.adapters.EditProfileGISProjectsAdapter;
-import com.udacity.googleindiascholarships.members.ui.adapters.EditProfileGISStoriesAdapter;
+import com.udacity.googleindiascholarships.currentuser.ui.adapters.UserDetailsGISProjectsAdapter;
+import com.udacity.googleindiascholarships.currentuser.ui.adapters.UserDetailsGISStoriesAdapter;
 /**
  * Created by Sudhanshu on 05-05-2018.
  */
 
-public class EditProfileGISTabFragment extends Fragment {
+public class UserDetailsGISTabFragment extends Fragment {
 
-    public EditProfileGISTabFragment() {
+    public UserDetailsGISTabFragment() {
         // Required empty public constructor
     }
 
@@ -26,8 +26,8 @@ public class EditProfileGISTabFragment extends Fragment {
     RecyclerView rvProfileGISStories,rvProfileGISProjects;
     LinearLayoutManager llmProfileGISStories;
     GridLayoutManager glmProfileGISProjects;
-    EditProfileGISStoriesAdapter profileGISStoriesAdapter;
-    EditProfileGISProjectsAdapter profileGISProjectsAdapter;
+    UserDetailsGISStoriesAdapter profileGISStoriesAdapter;
+    UserDetailsGISProjectsAdapter profileGISProjectsAdapter;
 
 
     @Override
@@ -42,14 +42,14 @@ public class EditProfileGISTabFragment extends Fragment {
         llmProfileGISStories = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
         rvProfileGISStories.setLayoutManager(llmProfileGISStories);
 
-        profileGISStoriesAdapter = new EditProfileGISStoriesAdapter();
+        profileGISStoriesAdapter = new UserDetailsGISStoriesAdapter();
         rvProfileGISStories.setAdapter(profileGISStoriesAdapter);
 
 
         glmProfileGISProjects = new GridLayoutManager(getContext(),2);
         rvProfileGISProjects.setLayoutManager(glmProfileGISProjects);
 
-        profileGISProjectsAdapter = new EditProfileGISProjectsAdapter(getContext());
+        profileGISProjectsAdapter = new UserDetailsGISProjectsAdapter(getContext());
         rvProfileGISProjects.setAdapter(profileGISProjectsAdapter);
 
 

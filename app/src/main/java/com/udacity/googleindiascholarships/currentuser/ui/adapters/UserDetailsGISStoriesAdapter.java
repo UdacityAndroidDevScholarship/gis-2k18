@@ -1,4 +1,4 @@
-package com.udacity.googleindiascholarships.members.ui.adapters;
+package com.udacity.googleindiascholarships.currentuser.ui.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,23 +11,24 @@ import com.udacity.googleindiascholarships.R;
  * Created by HP on 07-05-2018.
  */
 
-public class EditProfileGISStoriesAdapter extends RecyclerView.Adapter<EditProfileGISStoriesAdapter.EditProfileGISStoriesViewHolder> {
+public class UserDetailsGISStoriesAdapter extends
+        RecyclerView.Adapter<UserDetailsGISStoriesAdapter.UserDetailsGISStoriesViewHolder> {
 
     private static int mListSize = 10;
     private static final int VIEW_TYPE_ADD_GIS_STORY = 0;
     private static final int VIEW_TYPE_GIS_STORY = 1;
 
-    public  EditProfileGISStoriesAdapter() {
+    public UserDetailsGISStoriesAdapter() {
     }
 
-    class  EditProfileGISStoriesViewHolder extends RecyclerView.ViewHolder{
-        public  EditProfileGISStoriesViewHolder(View itemView) {
+    class  UserDetailsGISStoriesViewHolder extends RecyclerView.ViewHolder{
+        UserDetailsGISStoriesViewHolder(View itemView) {
             super(itemView);
 
         }
     }
     @Override
-    public EditProfileGISStoriesAdapter.EditProfileGISStoriesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public UserDetailsGISStoriesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         int layoutId = R.layout.list_item_profile_gis_stories;
         switch (viewType){
             case VIEW_TYPE_ADD_GIS_STORY:
@@ -39,11 +40,11 @@ public class EditProfileGISStoriesAdapter extends RecyclerView.Adapter<EditProfi
         }
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(layoutId, parent, false);
-        return new EditProfileGISStoriesAdapter.EditProfileGISStoriesViewHolder(itemView);
+        return new UserDetailsGISStoriesViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(EditProfileGISStoriesAdapter.EditProfileGISStoriesViewHolder holder, int position) {
+    public void onBindViewHolder(UserDetailsGISStoriesViewHolder holder, int position) {
 
     }
 

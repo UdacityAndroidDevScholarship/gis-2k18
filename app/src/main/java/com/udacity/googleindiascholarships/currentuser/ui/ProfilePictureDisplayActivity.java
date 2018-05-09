@@ -1,4 +1,4 @@
-package com.udacity.googleindiascholarships.members.ui;
+package com.udacity.googleindiascholarships.currentuser.ui;
 
 import android.content.Intent;
 import android.graphics.Bitmap;

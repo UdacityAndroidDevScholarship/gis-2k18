@@ -1,4 +1,4 @@
-package com.udacity.googleindiascholarships.members.ui;
+package com.udacity.googleindiascholarships.currentuser.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import com.udacity.googleindiascholarships.R;
 
@@ -15,7 +14,7 @@ import com.udacity.googleindiascholarships.R;
  * Created by HP on 05-05-2018.
  */
 
-public class EditProfileAboutTabFragment extends Fragment {
+public class UserDetailsAboutTabFragment extends Fragment {
 
     private boolean editSkillFlag = false, editDescriptionFlag = false;
     EditText etUserSkills;
@@ -24,7 +23,7 @@ public class EditProfileAboutTabFragment extends Fragment {
     ImageButton btnUserDescriptionEdit;
 
 
-    public EditProfileAboutTabFragment() {
+    public UserDetailsAboutTabFragment() {
         // Required empty public constructor
     }
 
@@ -33,7 +32,7 @@ public class EditProfileAboutTabFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_edit_profile_about_tab, container, false);
+        View view = inflater.inflate(R.layout.fragment_user_details_about_tab, container, false);
 
         etUserSkills = view.findViewById(R.id.et_user_skills);
         btnUserSkillEdit = view.findViewById(R.id.btn_user_skill_edit);

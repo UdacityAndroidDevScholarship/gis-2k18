@@ -1,7 +1,6 @@
 package com.udacity.googleindiascholarships.ui;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
@@ -23,17 +22,14 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.amulyakhare.textdrawable.TextDrawable;
-import com.google.firebase.auth.FirebaseAuth;
 import com.udacity.googleindiascholarships.R;
 import com.udacity.googleindiascholarships.challenges.ui.ChallengesFragment;
 import com.udacity.googleindiascholarships.community.ui.CommunityFragment;
-import com.udacity.googleindiascholarships.members.ui.EditProfileActivity;
+import com.udacity.googleindiascholarships.currentuser.ui.UserDetailsActivity;
 import com.udacity.googleindiascholarships.members.ui.MembersFragment;
-import com.udacity.googleindiascholarships.members.ui.ProfileActivity;
 import com.udacity.googleindiascholarships.projects.ui.ProjectsFragment;
 import com.udacity.googleindiascholarships.quizzes.ui.QuizzesFragment;
 import com.udacity.googleindiascholarships.stories.ui.StoriesFragment;
-import com.udacity.googleindiascholarships.utils.Constants;
 
 import java.util.Arrays;
 
@@ -199,7 +195,7 @@ public class MainActivity extends AppCompatActivity
                 fragment = new CommunityFragment();
                 break;
             case R.id.nav_user_profile:
-                Intent profileActivityIntent = new Intent(this, EditProfileActivity.class);
+                Intent profileActivityIntent = new Intent(this, UserDetailsActivity.class);
 
                 startActivity(profileActivityIntent);
                 break;

@@ -1,10 +1,9 @@
-package com.udacity.googleindiascholarships.members.ui.adapters;
+package com.udacity.googleindiascholarships.currentuser.ui.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.udacity.googleindiascholarships.R;
 
@@ -12,14 +11,14 @@ import com.udacity.googleindiascholarships.R;
  * Created by Sudhanshu on 07-05-2018.
  */
 
-public class EditProfileProjectsAdapter extends RecyclerView.Adapter<EditProfileProjectsAdapter.EditProfileViewHolder> {
+public class UserDetailsProjectsAdapter extends RecyclerView.Adapter<UserDetailsProjectsAdapter.UserDetailsViewHolder> {
 
     public static final int VIEW_TYPE_PROJECT = 0;
     public static final int VIEW_TYPE_ADD_PROJECT = 1;
     public static int mListSize = 10;
 
     @Override
-    public EditProfileViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public UserDetailsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView;
         int layoutId = R.layout.list_item_profile_projects;
         switch (viewType){
@@ -32,11 +31,11 @@ public class EditProfileProjectsAdapter extends RecyclerView.Adapter<EditProfile
         }
         itemView = LayoutInflater.from(parent.getContext())
                 .inflate(layoutId ,parent ,false);
-        return new EditProfileViewHolder(itemView);
+        return new UserDetailsViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(EditProfileViewHolder holder, int position) {
+    public void onBindViewHolder(UserDetailsViewHolder holder, int position) {
 
     }
 
@@ -45,9 +44,9 @@ public class EditProfileProjectsAdapter extends RecyclerView.Adapter<EditProfile
         return mListSize;
     }
 
-    public class EditProfileViewHolder extends RecyclerView.ViewHolder {
+    public class UserDetailsViewHolder extends RecyclerView.ViewHolder {
 
-        public EditProfileViewHolder(View itemView) {
+        public UserDetailsViewHolder(View itemView) {
             super(itemView);
         }
     }
