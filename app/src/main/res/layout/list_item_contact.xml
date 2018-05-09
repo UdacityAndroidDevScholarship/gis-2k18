@@ -3,7 +3,7 @@
     android:id="@+id/civ_contactImageView"
     android:layout_width="50dp"
     android:layout_height="50dp"
-    android:layout_marginRight="32dp"
+    android:layout_marginRight="16dp"
     android:src="@drawable/ic_gis_logo">
 
 </de.hdodenhof.circleimageview.CircleImageView>

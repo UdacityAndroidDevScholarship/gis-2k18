@@ -148,7 +148,7 @@ public class ProjectDetails extends AppCompatActivity {
 
                 }
 
-                contactAdapter = new ContactAdapter(getApplicationContext(), contactList);
+                contactAdapter = new ContactAdapter(ProjectDetails.this, contactList);
                 contactRecyclerView.setAdapter(contactAdapter);
 
 

@@ -146,5 +146,6 @@
     <string name="project_description">Project Description</string>
     <string name="title_activity_challenges_details">ChallengesDetails</string>
     <string name="text_user_name">Vineeth Reddy</string>
+    <string name="About">About</string>
 
 </resources>
