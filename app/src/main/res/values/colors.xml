@@ -15,7 +15,8 @@
     <color name="grey">#737373</color>
 
     <color name="lightBlue">#2175BC</color>
-
+    <color name="mainScreenBackground">#F3F3F3</color>
+    <color name="mainScreenTextColor">#797979</color>
     <color name="opaqueWhite">#90ffffff</color>
     <color name="secondaryLight">#90ffffff</color>
     <color name="color_overlay_black">#55000000</color>

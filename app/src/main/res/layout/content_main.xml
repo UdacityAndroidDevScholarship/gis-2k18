@@ -6,9 +6,37 @@
     android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.udacity.googleindiascholarships.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/mainScreenTextColor"
+        android:text="Announcements"
+        android:textSize="25sp"
+        android:padding="5dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_announcements"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/mainScreenTextColor"
+        android:text="Blogs"
+        android:textSize="25sp"
+        android:padding="5dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_blogs"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
 </LinearLayout>

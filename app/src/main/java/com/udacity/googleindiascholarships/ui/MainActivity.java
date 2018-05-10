@@ -12,6 +12,8 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,6 +32,8 @@ import com.udacity.googleindiascholarships.members.ui.MembersFragment;
 import com.udacity.googleindiascholarships.projects.ui.ProjectsFragment;
 import com.udacity.googleindiascholarships.quizzes.ui.QuizzesFragment;
 import com.udacity.googleindiascholarships.stories.ui.StoriesFragment;
+import com.udacity.googleindiascholarships.ui.adapters.AnnouncementsRecyclerViewAdapter;
+import com.udacity.googleindiascholarships.ui.adapters.BlogsRecyclerViewAdapter;
 
 import java.util.Arrays;
 
@@ -40,6 +44,9 @@ public class MainActivity extends AppCompatActivity
     Spinner spCourses;
     ImageView ivNavHeader;
     ArrayAdapter<CharSequence> courseSpinnerAdapter;
+    AnnouncementsRecyclerViewAdapter announcementsRecyclerViewAdapter;
+    BlogsRecyclerViewAdapter blogsRecyclerViewAdapter;
+    RecyclerView blogsRecyclerView, announcementsRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +87,22 @@ public class MainActivity extends AppCompatActivity
                 setIvNavHeader(getString(R.string.NA));
             }
         });
+
+        //Fetching the Recycler views from the layout file
+        blogsRecyclerView = (RecyclerView) findViewById(R.id.rv_blogs);
+        announcementsRecyclerView = (RecyclerView) findViewById(R.id.rv_announcements);
+
+        blogsRecyclerViewAdapter = new BlogsRecyclerViewAdapter(this);
+        announcementsRecyclerViewAdapter = new AnnouncementsRecyclerViewAdapter(this);
+
+        LinearLayoutManager blogsHorizontalLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager announcementsHorizontalLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+
+        blogsRecyclerView.setLayoutManager(blogsHorizontalLinearLayoutManager);
+        blogsRecyclerView.setAdapter(blogsRecyclerViewAdapter);
+
+        announcementsRecyclerView.setLayoutManager(announcementsHorizontalLinearLayoutManager);
+        announcementsRecyclerView.setAdapter(announcementsRecyclerViewAdapter);
     }
 
     @Override
