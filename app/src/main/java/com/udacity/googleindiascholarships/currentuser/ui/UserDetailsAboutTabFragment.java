@@ -53,12 +53,13 @@ public class UserDetailsAboutTabFragment extends Fragment {
                 if (!editSkillFlag) {
                     etUserSkills.setFocusableInTouchMode(true);
                     etUserSkills.setEnabled(true);
+                    etUserSkills.setSelection(etUserSkills.getText().toString().length());
                     btnUserSkillEdit.setImageResource(R.drawable.ic_tick_save);
                     editSkillFlag = true;
                 } else {
                     etUserSkills.setFocusable(false);
                     etUserSkills.setEnabled(false);
-                    btnUserSkillEdit.setImageResource(R.drawable.ic_edit_black_24dp);
+                    btnUserSkillEdit.setImageResource(R.drawable.ic_edit);
                     editSkillFlag = false;
 
                 }
@@ -71,12 +72,13 @@ public class UserDetailsAboutTabFragment extends Fragment {
                 if (!editDescriptionFlag) {
                     etUserDescription.setFocusableInTouchMode(true);
                     etUserDescription.setEnabled(true);
+                    etUserDescription.setSelection(etUserDescription.getText().toString().length());
                     btnUserDescriptionEdit.setImageResource(R.drawable.ic_tick_save);
                     editDescriptionFlag = true;
                 } else {
                     etUserDescription.setFocusable(false);
                     etUserDescription.setEnabled(false);
-                    btnUserDescriptionEdit.setImageResource(R.drawable.ic_edit_black_24dp);
+                    btnUserDescriptionEdit.setImageResource(R.drawable.ic_edit);
                     editDescriptionFlag = false;
 
                 }

@@ -23,6 +23,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -51,7 +52,6 @@ public class UserDetailsActivity extends AppCompatActivity implements View.OnCli
     ViewPager viewPager;
     TabLayout tabLayout;
     Toolbar toolbar;
-    FloatingActionButton editProfileButton;
     ImageButton btnEditUserProfileView;
     EditText etUserName, etUserShortDescription;
     boolean userProfileEditFlag = false;
@@ -72,9 +72,7 @@ public class UserDetailsActivity extends AppCompatActivity implements View.OnCli
         viewPager = (ViewPager) findViewById(R.id.vp_edit_profile);
         tabLayout = (TabLayout) findViewById(R.id.tl_edit_profile);
         toolbar = (Toolbar) findViewById(R.id.toolbar_edit_profile);
-        editProfileButton = (FloatingActionButton) findViewById(R.id.fab_edit_profile);
 
-        editProfileButton.setOnClickListener(this);
         setSupportActionBar(toolbar);
 
         if(getSupportActionBar() != null) {
@@ -122,13 +120,14 @@ public class UserDetailsActivity extends AppCompatActivity implements View.OnCli
                     etUserShortDescription.setBackgroundColor(getResources().getColor(R.color.color_overlay_black));
                     btnEditUserProfileView.setImageResource(R.drawable.ic_tick_save);
                 } else {
+                    hideSoftKeyboard();
                     userProfileEditFlag = false;
                     btnProfilePictureEdit.setVisibility(View.GONE);
                     etUserName.setFocusable(false);
                     etUserShortDescription.setFocusable(false);
                     etUserName.setBackgroundColor(Color.TRANSPARENT);
                     etUserShortDescription.setBackgroundColor(Color.TRANSPARENT);
-                    btnEditUserProfileView.setImageResource(R.drawable.ic_edit_black_24dp);
+                    btnEditUserProfileView.setImageResource(R.drawable.ic_edit);
                 }
                 break;
             case R.id.ib_edit_profile_pic:
@@ -197,10 +196,6 @@ public class UserDetailsActivity extends AppCompatActivity implements View.OnCli
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_PICK);
                 startActivityForResult(intent, PICK_IMAGE_CODE);
-                break;
-            case R.id.fab_edit_profile:
-                Toast.makeText(this, "Your profile edited successfully", Toast.LENGTH_SHORT).show();
-                finish();
                 break;
         }
     }
@@ -279,5 +274,12 @@ public class UserDetailsActivity extends AppCompatActivity implements View.OnCli
             return cursor.getString(column_index);
         } else
             return null;
+    }
+
+    public void hideSoftKeyboard() {
+        if(getCurrentFocus()!=null) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
     }
 }
