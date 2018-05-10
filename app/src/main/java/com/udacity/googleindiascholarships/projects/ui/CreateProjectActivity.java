@@ -50,8 +50,8 @@ public class CreateProjectActivity extends AppCompatActivity {
                     Toast.makeText(CreateProjectActivity.this, "Please Provide the details", Toast.LENGTH_SHORT).show();
                 }else{
                     progressBar.setVisibility(View.VISIBLE);
-                    Project currentProject = new Project(projectNameTxt.getText().toString(),projectDescriptionTxt.getText().toString(),projectLogoTxt.getText().toString(),projectGithubUrlTxt.getText().toString());
-                    saveProjectToFirebase(currentProject);
+                    //Project currentProject = new Project(projectNameTxt.getText().toString(),projectDescriptionTxt.getText().toString(),projectLogoTxt.getText().toString(),projectGithubUrlTxt.getText().toString());
+                    //saveProjectToFirebase(currentProject);
 
                 }
             }

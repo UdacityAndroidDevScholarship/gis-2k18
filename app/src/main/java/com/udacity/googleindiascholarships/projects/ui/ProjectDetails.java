@@ -3,6 +3,7 @@ package com.udacity.googleindiascholarships.projects.ui;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -38,6 +39,8 @@ public class ProjectDetails extends AppCompatActivity {
     private String project_description;
     private String project_logo_url;
     private String project_github_url;
+    private String project_status;
+
 
 
 
@@ -48,7 +51,8 @@ public class ProjectDetails extends AppCompatActivity {
     ImageView mPorjectLogoImageView;
     CollapsingToolbarLayout mProjectColapsingToolbarLayout;
     Button mGithubLinkButton;
-
+    ImageView mainLogoImageView;
+    TextView mProjectStatus;
 
     ContactAdapter contactAdapter;
     List<ContactModerator> contactList;
@@ -64,7 +68,13 @@ public class ProjectDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project_details);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+
+
+
+
+
 
 
         mProjectName = findViewById(R.id.tv_projectTitleDetails);
@@ -72,6 +82,8 @@ public class ProjectDetails extends AppCompatActivity {
         mPorjectLogoImageView = findViewById(R.id.iv_project_logoDetails);
         mGithubLinkButton = findViewById(R.id.projectLinkButton);
         mProjectColapsingToolbarLayout = findViewById(R.id.toolbar_layout_projectLogo);
+        mainLogoImageView = findViewById(R.id.logo_ImageView);
+        mProjectStatus  = findViewById(R.id.project_Status);
 
 
 
@@ -80,13 +92,23 @@ public class ProjectDetails extends AppCompatActivity {
         project_description = getIntent().getStringExtra("project_description");
         project_github_url = getIntent().getStringExtra("project_github_url");
         project_logo_url = getIntent().getStringExtra("project_logo_url");
+        project_status = getIntent().getStringExtra("project_status");
+
+
+        setTitle(project_name);
+        setTitleColor(R.color.black);
+
+
+
 
 
 
 
         mProjectName.setText(project_name);
         mProjectDescription.setText(project_description);
+        mProjectStatus.setText(project_status);
         Picasso.with(this).load(project_logo_url).into(mPorjectLogoImageView);
+        Picasso.with(this).load(project_logo_url).into(mainLogoImageView);
        // mProjectColapsingToolbarLayout.set
 
         mGithubLinkButton.setOnClickListener(new View.OnClickListener() {

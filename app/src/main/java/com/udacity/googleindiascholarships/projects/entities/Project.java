@@ -8,6 +8,8 @@ public class Project {
     private String project_github_url;
     private int placeHolderImage;
 
+    private String project_status;
+
     private int contactImage;
 
 
@@ -15,17 +17,22 @@ public class Project {
 
     }
 
-    public Project(String project_name, String project_description, String project_logo_url, String project_github_url) {
+    public Project(String project_name, String project_description, String project_logo_url, String project_github_url,String project_status) {
         this.project_name = project_name;
         this.project_description = project_description;
         this. project_logo_url =  project_logo_url;
         this.project_github_url = project_github_url;
+        this.project_status = project_status;
     }
 
     public Project(String project_name, int placeholderImage) {
         this.project_name = project_name;
         this.placeHolderImage = placeholderImage;
 
+    }
+
+    public String getProject_status() {
+        return project_status;
     }
 
     public int getContactImage() {

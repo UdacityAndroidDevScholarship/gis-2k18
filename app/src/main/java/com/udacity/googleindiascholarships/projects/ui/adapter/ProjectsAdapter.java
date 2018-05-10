@@ -72,6 +72,7 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Projec
                     intent.putExtra("project_description",mListItems.get(position).getProject_description());
                     intent.putExtra("project_logo_url",mListItems.get(position).getProject_logo_url());
                     intent.putExtra("project_name",mListItems.get(position).getProject_name());
+                    intent.putExtra("project_status",mListItems.get(position).getProject_status());
                     context.startActivity(intent);
 
                 }
