@@ -1,26 +1,34 @@
 package com.udacity.googleindiascholarships.stories.ui.adapters;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.udacity.googleindiascholarships.R;
+import com.udacity.googleindiascholarships.community.ui.entities.ExternalLinks;
+
+import java.util.List;
 
 /**
  * Created by vinee_000 on 20-04-2018.
  */
 
 public class AllStoriesAdapter extends RecyclerView.Adapter<AllStoriesAdapter.AllStoriesViewHolder>{
+    public Context mContext;
+    public List<ExternalLinks> mLinkItems;
+
     public AllStoriesAdapter() {
     }
-
-    class AllStoriesViewHolder extends RecyclerView.ViewHolder{
-        public AllStoriesViewHolder(View itemView) {
-            super(itemView);
-
-        }
+    public AllStoriesAdapter(Context context, List<ExternalLinks> mListItems) {
+        mContext = context;
+        this.mLinkItems = mListItems;
     }
+
     @Override
     public AllStoriesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
@@ -30,13 +38,34 @@ public class AllStoriesAdapter extends RecyclerView.Adapter<AllStoriesAdapter.Al
 
     @Override
     public void onBindViewHolder(AllStoriesViewHolder holder, int position) {
-
+        final ExternalLinks currentExternalLink = mLinkItems.get(position);
+        holder.storyProfileNameText.setText(currentExternalLink.getLinkPostedBy());
+        holder.storyTitleText.setText(currentExternalLink.getLinkDescription());
+        holder.storyReadText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(currentExternalLink.getLinkUrl()));
+                mContext.startActivity(browserIntent);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return mLinkItems.size();
     }
 
+    public class AllStoriesViewHolder extends RecyclerView.ViewHolder{
+        private TextView storyProfileNameText;
+        private TextView storyTitleText;
+        private TextView storyReadText;
+
+        public AllStoriesViewHolder(View itemView) {
+            super(itemView);
+            storyProfileNameText = itemView.findViewById(R.id.tv_all_story_profile_name);
+            storyTitleText = itemView.findViewById(R.id.tv_all_story_title);
+            storyReadText = itemView.findViewById(R.id.tv_read_txt);
+        }
+    }
 
 }

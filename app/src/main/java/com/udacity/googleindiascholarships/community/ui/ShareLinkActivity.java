@@ -23,6 +23,9 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.leocardz.link.preview.library.LinkPreviewCallback;
+import com.leocardz.link.preview.library.SourceContent;
+import com.leocardz.link.preview.library.TextCrawler;
 import com.udacity.googleindiascholarships.R;
 import com.udacity.googleindiascholarships.community.ui.entities.ExternalLinks;
 import com.udacity.googleindiascholarships.projects.entities.Project;
@@ -31,7 +34,6 @@ import com.udacity.googleindiascholarships.utils.Constants;
 
 public class ShareLinkActivity extends AppCompatActivity {
     private EditText linkUrlTxt;
-    private EditText linkDescriptionTxt;
     private EditText linkSharedByTxt;
     private Button saveToFirebaseBtn;
     private ProgressBar progressBar;
@@ -47,7 +49,6 @@ public class ShareLinkActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         linkUrlTxt = (EditText) findViewById(R.id.link_url);
-        linkDescriptionTxt = (EditText) findViewById(R.id.link_description);
         linkSharedByTxt = (EditText) findViewById(R.id.link_shared_by);
         dropdown = (Spinner) findViewById(R.id.blog_or_resources_spinner);
         String[] items = new String[]{"Blog", "Resource"};
@@ -59,18 +60,34 @@ public class ShareLinkActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 linkType = dropdown.getSelectedItem().toString();
-                if (TextUtils.isEmpty(linkUrlTxt.getText()) || TextUtils.isEmpty(linkSharedByTxt.getText()) || TextUtils.isEmpty(linkDescriptionTxt.getText()) || TextUtils.isEmpty(linkType)) {
+                if (TextUtils.isEmpty(linkUrlTxt.getText()) || TextUtils.isEmpty(linkSharedByTxt.getText())  || TextUtils.isEmpty(linkType)) {
                     Toast.makeText(ShareLinkActivity.this, "Please provide all details", Toast.LENGTH_SHORT).show();
                 } else {
                     progressBar.setVisibility(View.VISIBLE);
-                    ExternalLinks currentLink = new ExternalLinks(linkUrlTxt.getText().toString(), linkSharedByTxt.getText().toString(),linkDescriptionTxt.getText().toString());
-                    saveLinkToFirebase(currentLink);
+                    TextCrawler textCrawler = new TextCrawler();
+                    textCrawler.makePreview(new LinkPreviewCallback() {
+                        @Override
+                        public void onPre() {
+                            progressBar.setVisibility(View.VISIBLE);
+                        }
+
+                        @Override
+                        public void onPos(SourceContent sourceContent, boolean b) {
+                            if(!sourceContent.isSuccess()){
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(ShareLinkActivity.this, "Please Check your internet connection", Toast.LENGTH_SHORT).show();
+                            }else {
+                                ExternalLinks currentLink = new ExternalLinks(linkUrlTxt.getText().toString(), linkSharedByTxt.getText().toString(), sourceContent.getTitle());
+                                saveLinkToFirebase(currentLink);
+                                progressBar.setVisibility(View.GONE);
+                            }
+                        }
+                    }, linkUrlTxt.getText().toString());
+
 
                 }
             }
         });
-
-
     }
 
     private void saveLinkToFirebase(ExternalLinks currentLink) {
@@ -91,7 +108,7 @@ public class ShareLinkActivity extends AppCompatActivity {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             progressBar.setVisibility(View.GONE);
-                            Log.i(TAG, "onFailure: "+e.getMessage());
+                            Log.i(TAG, "onFailure: " + e.getMessage());
                             Toast.makeText(ShareLinkActivity.this, "Could not be saved.Check your internet connection", Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -109,7 +126,7 @@ public class ShareLinkActivity extends AppCompatActivity {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             progressBar.setVisibility(View.GONE);
-                            Log.i(TAG, "onFailure: "+e.getMessage());
+                            Log.i(TAG, "onFailure: " + e.getMessage());
                             Toast.makeText(ShareLinkActivity.this, "Could not be saved.Check your internet connection", Toast.LENGTH_SHORT).show();
                         }
 

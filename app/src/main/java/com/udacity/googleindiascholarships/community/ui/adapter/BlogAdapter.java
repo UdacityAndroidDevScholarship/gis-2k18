@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.leocardz.link.preview.library.LinkPreviewCallback;
+import com.leocardz.link.preview.library.SourceContent;
+import com.leocardz.link.preview.library.TextCrawler;
 import com.udacity.googleindiascholarships.R;
 import com.udacity.googleindiascholarships.community.ui.entities.ExternalLinks;
 
@@ -36,8 +39,9 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.LinkPreviewVie
     }
 
     @Override
-    public void onBindViewHolder(LinkPreviewViewHolder holder, int position) {
+    public void onBindViewHolder(final LinkPreviewViewHolder holder, int position) {
         final ExternalLinks currentExternalLink = mLinkItems.get(position);
+
         holder.previewLinkText.setText(currentExternalLink.getLinkUrl());
         holder.previewLinkPostedBy.setText(currentExternalLink.getLinkPostedBy());
         holder.previewLinkDescription.setText(currentExternalLink.getLinkDescription());
@@ -48,6 +52,7 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.LinkPreviewVie
                 mContext.startActivity(browserIntent);
             }
         });
+
     }
 
     @Override

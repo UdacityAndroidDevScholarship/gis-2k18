@@ -42,7 +42,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
+                android:resource="@xml/file_paths" />
         </provider>
 
         <activity
@@ -58,15 +58,25 @@
             android:name=".projects.ui.ProjectDetails"
             android:label="@string/title_activity_project_details"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".currentuser.ui.UserDetailsActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".currentuser.ui.ProfilePictureDisplayActivity"/>
+        <activity
+            android:name=".currentuser.ui.UserDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".currentuser.ui.ProfilePictureDisplayActivity" />
         <activity
             android:name=".projects.ui.CreateProjectActivity"
             android:label="@string/title_activity_create_project"
             android:parentActivityName=".ui.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".community.ui.ShareLinkActivity"
+            android:label="@string/title_activity_share_link"
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity
             android:name=".community.ui.ShareLinkActivity"
             android:label="@string/title_activity_share_link"

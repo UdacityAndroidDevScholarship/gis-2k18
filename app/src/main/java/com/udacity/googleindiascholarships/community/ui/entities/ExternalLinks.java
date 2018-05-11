@@ -1,5 +1,7 @@
 package com.udacity.googleindiascholarships.community.ui.entities;
 
+import com.leocardz.link.preview.library.SourceContent;
+
 /**
  * Created by Rajat Kumar Gupta on 26-04-2018.
  */
@@ -9,7 +11,12 @@ public class ExternalLinks {
     private String linkPostedBy;
     private String linkDescription;
 
+
     public ExternalLinks() {
+    }
+    public ExternalLinks(String linkUrl, String linkDescription) {
+        this.linkUrl = linkUrl;
+        this.linkDescription = linkDescription;
     }
     public ExternalLinks(String linkUrl, String linkPostedBy,String linkDescription) {
         this.linkUrl = linkUrl;

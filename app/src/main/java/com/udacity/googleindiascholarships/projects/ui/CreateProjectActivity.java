@@ -27,6 +27,7 @@ public class CreateProjectActivity extends AppCompatActivity {
     private EditText projectLogoTxt;
     private Button saveToFirebaseBtn;
     private ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,21 +36,23 @@ public class CreateProjectActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         projectNameTxt = (EditText) findViewById(R.id.project_name);
-        projectDescriptionTxt =(EditText) findViewById(R.id.project_description);
-        projectGithubUrlTxt = (EditText)findViewById(R.id.project_github_url);
-        projectLogoTxt = (EditText)findViewById(R.id.project_logo);
+        projectDescriptionTxt = (EditText) findViewById(R.id.project_description);
+        projectGithubUrlTxt = (EditText) findViewById(R.id.project_github_url);
+        projectLogoTxt = (EditText) findViewById(R.id.project_logo);
         saveToFirebaseBtn = (Button) findViewById(R.id.save_to_firebase_btn);
-        progressBar = (ProgressBar)findViewById(R.id.progress_bar);
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
 
         saveToFirebaseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if(TextUtils.isEmpty(projectNameTxt.getText()) || TextUtils.isEmpty(projectNameTxt.getText()) || TextUtils.isEmpty(projectNameTxt.getText())||
-                TextUtils.isEmpty(projectNameTxt.getText())|| TextUtils.isEmpty(projectNameTxt.getText())){
+                if (TextUtils.isEmpty(projectNameTxt.getText()) || TextUtils.isEmpty(projectNameTxt.getText()) || TextUtils.isEmpty(projectNameTxt.getText()) ||
+                        TextUtils.isEmpty(projectNameTxt.getText()) || TextUtils.isEmpty(projectNameTxt.getText())) {
                     Toast.makeText(CreateProjectActivity.this, "Please Provide the details", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     progressBar.setVisibility(View.VISIBLE);
+                    Project currentProject = new Project(projectNameTxt.getText().toString(), projectDescriptionTxt.getText().toString(), projectLogoTxt.getText().toString(), projectGithubUrlTxt.getText().toString(),"Under Development");
+                    saveProjectToFirebase(currentProject);
                     //Project currentProject = new Project(projectNameTxt.getText().toString(),projectDescriptionTxt.getText().toString(),projectLogoTxt.getText().toString(),projectGithubUrlTxt.getText().toString());
                     //saveProjectToFirebase(currentProject);
 

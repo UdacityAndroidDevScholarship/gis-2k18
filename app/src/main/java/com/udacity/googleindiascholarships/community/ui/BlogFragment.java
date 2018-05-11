@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.leocardz.link.preview.library.LinkPreviewCallback;
+import com.leocardz.link.preview.library.SourceContent;
+import com.leocardz.link.preview.library.TextCrawler;
 import com.udacity.googleindiascholarships.R;
 import com.udacity.googleindiascholarships.community.ui.adapter.BlogAdapter;
 import com.udacity.googleindiascholarships.community.ui.entities.ExternalLinks;
@@ -30,6 +34,7 @@ public class BlogFragment extends Fragment {
     private List<ExternalLinks> blogLinks;
     private RecyclerView blogRecyclerView;
     private BlogAdapter blogAdapter;
+
     public BlogFragment() {
         // Required empty public constructor
     }
@@ -43,7 +48,7 @@ public class BlogFragment extends Fragment {
         blogRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         blogLinks = new ArrayList<ExternalLinks>();
         readFromFirebase();
-        blogAdapter = new BlogAdapter(getContext(),blogLinks);
+        blogAdapter = new BlogAdapter(getContext(), blogLinks);
         blogRecyclerView.setAdapter(blogAdapter);
 
         return rootView;
@@ -51,17 +56,20 @@ public class BlogFragment extends Fragment {
 
     private void readFromFirebase() {
         FirebaseDatabase database = FirebaseDatabase.getInstance(Constants.DATABASE_URL);
-        DatabaseReference mExternalResourcesRef = database.getReference("external_resources").child("blogs");
+        DatabaseReference mExternalResourcesRef = database.getReference("external_resources")
+                .child("blogs");
         mExternalResourcesRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
 
                 blogLinks.clear();
-                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     ExternalLinks currentBlog = postSnapshot.getValue(ExternalLinks.class);
                     blogLinks.add(currentBlog);
-                }
 
+
+                }
+                Log.i("TAG", "onDataChange: Hello Testing");
                 blogAdapter.notifyDataSetChanged();
             }
 
