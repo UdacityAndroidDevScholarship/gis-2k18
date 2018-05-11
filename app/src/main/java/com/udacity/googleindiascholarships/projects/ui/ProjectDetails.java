@@ -43,12 +43,6 @@ public class ProjectDetails extends AppCompatActivity {
     private String project_logo_url;
     private String project_github_url;
     private String project_status;
-
-
-
-
-
-
     TextView mProjectName;
     TextView mProjectDescription;
     ImageView mPorjectLogoImageView;
@@ -74,14 +68,6 @@ public class ProjectDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project_details);
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-
-
-
-
-
-
-
         mProjectName = findViewById(R.id.tv_projectTitleDetails);
         mProjectDescription = findViewById(R.id.tv_projectDescription);
         mPorjectLogoImageView = findViewById(R.id.iv_project_logoDetails);
@@ -89,33 +75,19 @@ public class ProjectDetails extends AppCompatActivity {
         mProjectColapsingToolbarLayout = findViewById(R.id.toolbar_layout_projectLogo);
         mainLogoImageView = findViewById(R.id.logo_ImageView);
         mProjectStatus  = findViewById(R.id.project_Status);
-
-
-
-
         project_name = getIntent().getStringExtra("project_name");
         project_description = getIntent().getStringExtra("project_description");
         project_github_url = getIntent().getStringExtra("project_github_url");
         project_logo_url = getIntent().getStringExtra("project_logo_url");
         project_status = getIntent().getStringExtra("project_status");
-
-
         setTitle(project_name);
         setTitleColor(R.color.black);
-
-
-
-
-
-
-
         mProjectName.setText(project_name);
         mProjectDescription.setText(project_description);
         mProjectStatus.setText(project_status);
         Picasso.with(this).load(project_logo_url).into(mPorjectLogoImageView);
         Picasso.with(this).load(project_logo_url).into(mainLogoImageView);
        // mProjectColapsingToolbarLayout.set
-
         mGithubLinkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,21 +97,14 @@ public class ProjectDetails extends AppCompatActivity {
             }
         });
 
-
-
-
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-
         contactRecyclerView = findViewById(R.id.rv_contactRecyclerView);
         mLinearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         contactRecyclerView.setLayoutManager(mLinearLayoutManager);
         contactList = new ArrayList<ContactModerator>();
-
         readContactFirebase(project_name);
-
-
         AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
@@ -151,8 +116,6 @@ public class ProjectDetails extends AppCompatActivity {
                 }
             }
         });
-
-
 
     }
 
@@ -167,10 +130,6 @@ public class ProjectDetails extends AppCompatActivity {
         }
     }
 
-
-
-
-
     void readContactFirebase(String child){
 
         mFirebaseDatabase = FirebaseDatabase.getInstance(Constants.DATABASE_URL);
@@ -182,15 +141,10 @@ public class ProjectDetails extends AppCompatActivity {
                 for(DataSnapshot contactSnapshot : dataSnapshot.getChildren()){
                     ContactModerator contact = contactSnapshot.getValue(ContactModerator.class);
                     contactList.add(contact);
-
-
                 }
 
                 contactAdapter = new ContactAdapter(ProjectDetails.this, contactList);
                 contactRecyclerView.setAdapter(contactAdapter);
-
-
-
             }
 
             @Override
@@ -198,8 +152,6 @@ public class ProjectDetails extends AppCompatActivity {
 
             }
         });
-
-
     }
 
 

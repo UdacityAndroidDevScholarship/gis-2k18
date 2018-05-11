@@ -66,8 +66,6 @@ public class BlogFragment extends Fragment {
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     ExternalLinks currentBlog = postSnapshot.getValue(ExternalLinks.class);
                     blogLinks.add(currentBlog);
-
-
                 }
                 Log.i("TAG", "onDataChange: Hello Testing");
                 blogAdapter.notifyDataSetChanged();

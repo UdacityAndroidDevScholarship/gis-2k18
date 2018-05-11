@@ -53,6 +53,19 @@ public class ProjectsFragment extends android.support.v4.app.Fragment {
 
         projectsRecyclerView = rootView.findViewById(R.id.projectsRecyclerView);
         createProjectBtn = rootView.findViewById(R.id.create_projects_fab_btn);
+<<<<<<< HEAD
+        projectsRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
+        createProjectBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(),CreateProjectActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        projectList = new ArrayList<Project>();
+=======
+>>>>>>> upstream/master
         projectsRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
         createProjectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
