@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,6 +34,8 @@ public class ChallengesDetails extends AppCompatActivity {
     ChallengesAdapter challengesAdapter;
     String child;
 
+    ProgressBar mProgressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +44,8 @@ public class ChallengesDetails extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        mProgressBar = findViewById(R.id.progress_barChallengeDetails);
 
 
         challengeRecyclerView = findViewById(R.id.challenge_names_list_recyclerView);
@@ -93,6 +98,7 @@ public class ChallengesDetails extends AppCompatActivity {
 
                 challengesAdapter = new ChallengesAdapter(getApplicationContext(), challengeList);
                 challengeRecyclerView.setAdapter(challengesAdapter);
+                mProgressBar.setVisibility(View.GONE);
 
             }
 

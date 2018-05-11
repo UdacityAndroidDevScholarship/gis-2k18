@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -37,7 +38,7 @@ public class ChallengesFragment extends android.support.v4.app.Fragment {
     //Firebase Variable Declaration
     FirebaseDatabase mFirebaseDatabase;
     DatabaseReference mFirebaseDatabaseReference;
-
+    ProgressBar mProgressBar;
 
     @Nullable
     @Override
@@ -48,6 +49,7 @@ public class ChallengesFragment extends android.support.v4.app.Fragment {
 
         challengeRecyclerView = rootView.findViewById(R.id.challenges_recyclerView);
         challengeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mProgressBar = rootView.findViewById(R.id.progress_barChallenges);
 
 
         challengeList = new ArrayList<Challenge>();
@@ -75,6 +77,7 @@ public class ChallengesFragment extends android.support.v4.app.Fragment {
 
                 challengesAdapter = new ChallengesListAdapter(getContext(), challengeList);
                 challengeRecyclerView.setAdapter(challengesAdapter);
+                mProgressBar.setVisibility(View.GONE);
 
             }
 

@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:padding="16dp">
 
-  <android.support.v7.widget.RecyclerView
+    <ProgressBar
+        android:id="@+id/progress_barProjects"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
 
-      android:id="@+id/projectsRecyclerView"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+
+        android:id="@+id/projectsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
-  </android.support.v7.widget.RecyclerView>
+    </android.support.v7.widget.RecyclerView>
 
-  <android.support.design.widget.FloatingActionButton
-      android:id="@+id/create_projects_fab_btn"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:src="@drawable/ic_add"
-      android:layout_gravity="bottom|right|end"/>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/create_projects_fab_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right|end"
+        android:src="@drawable/ic_add" />
 </FrameLayout>

@@ -8,6 +8,12 @@
     tools:context=".challenges.ui.ChallengesDetails"
     tools:showIn="@layout/activity_challenges_details">
 
+    <ProgressBar
+        android:id="@+id/progress_barChallengeDetails"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/challenge_names_list_recyclerView"

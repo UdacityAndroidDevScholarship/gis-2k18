@@ -4,6 +4,12 @@
     android:background="@color/white"
     android:layout_height="match_parent">
 
+    <ProgressBar
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_barChallenges"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/challenges_recyclerView"
         android:layout_width="match_parent"
