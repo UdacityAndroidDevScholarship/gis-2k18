@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/external_layout"
+    android:background="@color/white"
     tools:context="com.udacity.googleindiascholarships.community.ui.BlogFragment">
 
     <android.support.v7.widget.RecyclerView
