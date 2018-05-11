@@ -161,4 +161,12 @@
     <string name="pref_dialog_negative_btn_text">No</string>
     <string name="pref_dialog_key">custom_sign_out_pref_dialog</string>
 
+    <!--Home Screen resources-->
+    <string name="announcement_summary">All of you have been great so far in this scholarship journey, I wish you all the best for your future endeavours. Stay Hungry, Stay Udacious!</string>
+    <string name="announcement_title">Best of luck for your future</string>
+    <string name="announcement_time">17 hours ago</string>
+    <string name="announcement_author">Akshit Jain</string>
+
+    <string name="blog_title">Google India Challenge Scholarship: Nearing the end of a great journey</string>
+    <string name="blog_author">Sudhanshu Vohra</string>
 </resources>
