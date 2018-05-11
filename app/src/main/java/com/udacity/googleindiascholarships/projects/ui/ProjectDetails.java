@@ -8,15 +8,18 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -62,6 +65,8 @@ public class ProjectDetails extends AppCompatActivity {
     //Firebase Variable Declaration
     FirebaseDatabase mFirebaseDatabase;
     DatabaseReference mFirebaseDatabaseReference;
+
+    ActionBar actionBar;
 
 
     @Override
@@ -124,7 +129,8 @@ public class ProjectDetails extends AppCompatActivity {
 
 
         setSupportActionBar(toolbar);
-        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         contactRecyclerView = findViewById(R.id.rv_contactRecyclerView);
         mLinearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
@@ -134,7 +140,17 @@ public class ProjectDetails extends AppCompatActivity {
         readContactFirebase(project_name);
 
 
-
+        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (Math.abs(verticalOffset) == appBarLayout.getTotalScrollRange()) {
+                    actionBar.setTitle(project_name);
+                } else  {
+                   actionBar.setTitle("");
+                }
+            }
+        });
 
 
 
