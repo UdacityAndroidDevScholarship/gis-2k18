@@ -64,24 +64,8 @@ public class ShareLinkActivity extends AppCompatActivity {
                     Toast.makeText(ShareLinkActivity.this, "Please provide all details", Toast.LENGTH_SHORT).show();
                 } else {
                     progressBar.setVisibility(View.VISIBLE);
-<<<<<<< HEAD
+                    TextCrawler textCrawler = new TextCrawler();
 
-                    if (TextUtils.isEmpty(linkUrlTxt.getText()) || TextUtils.isEmpty(linkSharedByTxt.getText()) || TextUtils.isEmpty(linkType)) {
-                        Toast.makeText(ShareLinkActivity.this, "Please provide all details", Toast.LENGTH_SHORT).show();
-                    } else {
-                        progressBar.setVisibility(View.VISIBLE);
-                        TextCrawler textCrawler = new TextCrawler();
-
-=======
-                    ExternalLinks currentLink = new ExternalLinks(linkUrlTxt.getText().toString(), linkSharedByTxt.getText().toString());
-                    saveLinkToFirebase(currentLink);
-                    if (TextUtils.isEmpty(linkUrlTxt.getText()) || TextUtils.isEmpty(linkSharedByTxt.getText()) || TextUtils.isEmpty(linkType)) {
-                        Toast.makeText(ShareLinkActivity.this, "Please provide all details", Toast.LENGTH_SHORT).show();
-                    } else {
-                        progressBar.setVisibility(View.VISIBLE);
-                        TextCrawler textCrawler = new TextCrawler();
-
->>>>>>> upstream/master
                         textCrawler.makePreview(new LinkPreviewCallback() {
                             @Override
                             public void onPre() {
@@ -89,6 +73,7 @@ public class ShareLinkActivity extends AppCompatActivity {
                             }
 
                             @Override
+
                             public void onPos(SourceContent sourceContent, boolean b) {
                                 if (!sourceContent.isSuccess()) {
                                     progressBar.setVisibility(View.GONE);
@@ -103,9 +88,9 @@ public class ShareLinkActivity extends AppCompatActivity {
 
                     }
                 }
-            }
-        });
-    }
+            });
+        }
+
 
     private void saveLinkToFirebase(ExternalLinks currentLink) {
         FirebaseDatabase database = FirebaseDatabase.getInstance(Constants.DATABASE_URL);
