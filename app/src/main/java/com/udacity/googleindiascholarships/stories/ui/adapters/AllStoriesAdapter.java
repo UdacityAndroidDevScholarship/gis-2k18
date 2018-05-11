@@ -14,10 +14,6 @@ import com.udacity.googleindiascholarships.community.ui.entities.ExternalLinks;
 
 import java.util.List;
 
-/**
- * Created by vinee_000 on 20-04-2018.
- */
-
 public class AllStoriesAdapter extends RecyclerView.Adapter<AllStoriesAdapter.AllStoriesViewHolder>{
     public Context mContext;
     public List<ExternalLinks> mLinkItems;

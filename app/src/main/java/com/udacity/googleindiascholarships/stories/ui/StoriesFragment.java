@@ -23,6 +23,8 @@ import com.udacity.googleindiascholarships.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
 public class StoriesFragment extends android.support.v4.app.Fragment{
 
 
@@ -66,11 +68,15 @@ public class StoriesFragment extends android.support.v4.app.Fragment{
 
     private void readFeaturedStoriesFromFirebase() {
         FirebaseDatabase database = FirebaseDatabase.getInstance(Constants.DATABASE_URL);
+<<<<<<< HEAD
+        DatabaseReference mExternalResourcesRef = database.getReference("stories");
+=======
         DatabaseReference mExternalResourcesRef = database.getReference("external_resources")
 <<<<<<< HEAD
                 .child("stories");
 =======
                 .child("blogs");
+>>>>>>> upstream/master
 >>>>>>> upstream/master
         mExternalResourcesRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -93,12 +99,17 @@ public class StoriesFragment extends android.support.v4.app.Fragment{
         });
     }
     private void readAllStoriesFromFirebase() {
+<<<<<<< HEAD
+        final FirebaseDatabase database = FirebaseDatabase.getInstance(Constants.DATABASE_URL);
+        DatabaseReference mExternalResourcesRef = database.getReference("stories");
+=======
         FirebaseDatabase database = FirebaseDatabase.getInstance(Constants.DATABASE_URL);
         DatabaseReference mExternalResourcesRef = database.getReference("external_resources")
 <<<<<<< HEAD
                 .child("stories");
 =======
                 .child("blogs");
+>>>>>>> upstream/master
 >>>>>>> upstream/master
         mExternalResourcesRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -115,7 +126,8 @@ public class StoriesFragment extends android.support.v4.app.Fragment{
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                System.out.println("The read failed: " + databaseError.getMessage());
+                Log.i("TAG", "onDataChange: "+databaseError.getMessage());
+
                 Toast.makeText(getActivity(), "Network Error", Toast.LENGTH_SHORT).show();
             }
         });

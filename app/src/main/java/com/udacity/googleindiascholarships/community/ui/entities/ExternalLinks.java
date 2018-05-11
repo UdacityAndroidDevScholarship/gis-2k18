@@ -14,10 +14,7 @@ public class ExternalLinks {
 
     public ExternalLinks() {
     }
-    public ExternalLinks(String linkUrl, String linkDescription) {
-        this.linkUrl = linkUrl;
-        this.linkDescription = linkDescription;
-    }
+
     public ExternalLinks(String linkUrl, String linkPostedBy,String linkDescription) {
         this.linkUrl = linkUrl;
         this.linkPostedBy = linkPostedBy;

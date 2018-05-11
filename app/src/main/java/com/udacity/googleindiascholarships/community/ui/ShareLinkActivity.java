@@ -64,6 +64,15 @@ public class ShareLinkActivity extends AppCompatActivity {
                     Toast.makeText(ShareLinkActivity.this, "Please provide all details", Toast.LENGTH_SHORT).show();
                 } else {
                     progressBar.setVisibility(View.VISIBLE);
+<<<<<<< HEAD
+
+                    if (TextUtils.isEmpty(linkUrlTxt.getText()) || TextUtils.isEmpty(linkSharedByTxt.getText()) || TextUtils.isEmpty(linkType)) {
+                        Toast.makeText(ShareLinkActivity.this, "Please provide all details", Toast.LENGTH_SHORT).show();
+                    } else {
+                        progressBar.setVisibility(View.VISIBLE);
+                        TextCrawler textCrawler = new TextCrawler();
+
+=======
                     ExternalLinks currentLink = new ExternalLinks(linkUrlTxt.getText().toString(), linkSharedByTxt.getText().toString());
                     saveLinkToFirebase(currentLink);
                     if (TextUtils.isEmpty(linkUrlTxt.getText()) || TextUtils.isEmpty(linkSharedByTxt.getText()) || TextUtils.isEmpty(linkType)) {
@@ -72,6 +81,7 @@ public class ShareLinkActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.VISIBLE);
                         TextCrawler textCrawler = new TextCrawler();
 
+>>>>>>> upstream/master
                         textCrawler.makePreview(new LinkPreviewCallback() {
                             @Override
                             public void onPre() {

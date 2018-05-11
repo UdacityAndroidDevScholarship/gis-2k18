@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,9 +70,11 @@ public class ResourcesFragment extends Fragment {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                System.out.println("The read failed: " + databaseError.getMessage());
+                Log.i("TAG", "onDataChange: "+databaseError.getMessage());
+
                 Toast.makeText(getActivity(), "Network Error", Toast.LENGTH_SHORT).show();
             }
+
         });
 
     }

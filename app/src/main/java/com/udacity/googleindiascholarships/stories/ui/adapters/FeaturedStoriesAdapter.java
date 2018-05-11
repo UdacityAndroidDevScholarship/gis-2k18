@@ -16,8 +16,9 @@ import com.udacity.googleindiascholarships.R;
 import com.udacity.googleindiascholarships.community.ui.entities.ExternalLinks;
 
 import java.util.List;
+import java.util.Random;
 
-public class FeaturedStoriesAdapter extends RecyclerView.Adapter<FeaturedStoriesAdapter.FeaturedStoriesViewHolder>{
+public class FeaturedStoriesAdapter extends RecyclerView.Adapter<FeaturedStoriesAdapter.FeaturedStoriesViewHolder> {
 
     private Context mContext;
     private List<ExternalLinks> mLinkItems;
@@ -25,7 +26,8 @@ public class FeaturedStoriesAdapter extends RecyclerView.Adapter<FeaturedStories
 
     public FeaturedStoriesAdapter() {
     }
-    public FeaturedStoriesAdapter(Context context, List<ExternalLinks> mListItems,int numberOfFeaturedStories) {
+
+    public FeaturedStoriesAdapter(Context context, List<ExternalLinks> mListItems, int numberOfFeaturedStories) {
         this.mContext = context;
         this.mLinkItems = mListItems;
         this.numberOfStories = numberOfFeaturedStories;
@@ -35,23 +37,19 @@ public class FeaturedStoriesAdapter extends RecyclerView.Adapter<FeaturedStories
     @Override
     public FeaturedStoriesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_item_featured_stories,parent,false);
+                .inflate(R.layout.list_item_featured_stories, parent, false);
         return new FeaturedStoriesViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(FeaturedStoriesViewHolder holder, int position) {
+
         final ExternalLinks currentExternalLink = mLinkItems.get(position);
+
         holder.featuredStoryProfileNameText.setText(currentExternalLink.getLinkPostedBy());
-<<<<<<< HEAD
-<<<<<<< HEAD
         holder.featuredStoryTitleText.setText(currentExternalLink.getLinkUrl());
-=======
         holder.featuredStoryTitleText.setText(currentExternalLink.getLinkDescription());
->>>>>>> upstream/master
-=======
         holder.featuredStoryTitleText.setText(currentExternalLink.getLinkDescription());
->>>>>>> adding_link_preview
         holder.featuredStoryReadText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +57,7 @@ public class FeaturedStoriesAdapter extends RecyclerView.Adapter<FeaturedStories
                 mContext.startActivity(browserIntent);
             }
         });
+
     }
 
 
@@ -67,7 +66,7 @@ public class FeaturedStoriesAdapter extends RecyclerView.Adapter<FeaturedStories
         return mLinkItems.size();
     }
 
-    public class FeaturedStoriesViewHolder extends RecyclerView.ViewHolder{
+    public class FeaturedStoriesViewHolder extends RecyclerView.ViewHolder {
         private TextView featuredStoryProfileNameText;
         private TextView featuredStoryTitleText;
         private TextView featuredStoryReadText;

@@ -77,6 +77,16 @@ public class ProjectsFragment extends android.support.v4.app.Fragment {
 
         projectList = new ArrayList<Project>();
         projectsRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
+        createProjectBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(),CreateProjectActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        projectList = new ArrayList<Project>();
+        projectsRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
         mProgressBar = rootView.findViewById(R.id.progress_barProjects);
         createProjectBtn.setVisibility(View.GONE);
 
