@@ -1,22 +1,21 @@
 package com.udacity.googleindiascholarships.projects.ui;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,7 +34,7 @@ import com.udacity.googleindiascholarships.utils.Constants;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProjectDetails extends AppCompatActivity {
+public class ProjectDetails extends AppCompatActivity implements View.OnClickListener {
 
 
     private String project_name;
@@ -50,6 +49,9 @@ public class ProjectDetails extends AppCompatActivity {
     Button mGithubLinkButton;
     ImageView mainLogoImageView;
     TextView mProjectStatus;
+    private ImageButton shareProjectLink, markAsFavOne, markAsFavTwo;
+    private static boolean markedAsFav = false;
+    Uri githubUri;
 
     ContactAdapter contactAdapter;
     List<ContactModerator> contactList;
@@ -75,6 +77,9 @@ public class ProjectDetails extends AppCompatActivity {
         mProjectColapsingToolbarLayout = findViewById(R.id.toolbar_layout_projectLogo);
         mainLogoImageView = findViewById(R.id.logo_ImageView);
         mProjectStatus  = findViewById(R.id.project_Status);
+        shareProjectLink = findViewById(R.id.ib_share_project_url);
+        markAsFavOne = findViewById(R.id.ib_one_fav_project);
+        markAsFavTwo = findViewById(R.id.ib_two_fav_project);
         project_name = getIntent().getStringExtra("project_name");
         project_description = getIntent().getStringExtra("project_description");
         project_github_url = getIntent().getStringExtra("project_github_url");
@@ -88,14 +93,18 @@ public class ProjectDetails extends AppCompatActivity {
         Picasso.with(this).load(project_logo_url).into(mPorjectLogoImageView);
         Picasso.with(this).load(project_logo_url).into(mainLogoImageView);
        // mProjectColapsingToolbarLayout.set
+        githubUri = Uri.parse(project_github_url);
         mGithubLinkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri githHubUri = Uri.parse(project_github_url);
-                Intent websiteIntent = new Intent(Intent.ACTION_VIEW, githHubUri);
+                Intent websiteIntent = new Intent(Intent.ACTION_VIEW, githubUri);
                 startActivity(websiteIntent);
             }
         });
+
+        shareProjectLink.setOnClickListener(this);
+        markAsFavOne.setOnClickListener(this);
+        markAsFavTwo.setOnClickListener(this);
 
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
@@ -155,5 +164,30 @@ public class ProjectDetails extends AppCompatActivity {
     }
 
 
-
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.ib_one_fav_project:
+            case R.id.ib_two_fav_project:
+                if(markedAsFav){
+                    Drawable emptyHeart = ContextCompat.getDrawable(this, R.drawable.ic_favorite);
+                    markAsFavOne.setImageDrawable(emptyHeart);
+                    markAsFavTwo.setImageDrawable(emptyHeart);
+                    Toast.makeText(this, "Unmarked as favourite", Toast.LENGTH_SHORT).show();
+                }else{
+                    Drawable filledHeart = ContextCompat.getDrawable(this, R.drawable.ic_heart);
+                    markAsFavOne.setImageDrawable(filledHeart);
+                    markAsFavTwo.setImageDrawable(filledHeart);
+                    Toast.makeText(this, "Marked as favourite", Toast.LENGTH_SHORT).show();
+                }
+                markedAsFav = !markedAsFav;
+                break;
+            case R.id.ib_share_project_url:
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(Intent.EXTRA_TEXT, project_github_url);
+                startActivity(Intent.createChooser(shareIntent, "Share the project url"));
+                break;
+        }
+    }
 }

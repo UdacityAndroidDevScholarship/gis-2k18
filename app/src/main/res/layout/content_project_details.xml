@@ -92,13 +92,16 @@
                         android:layout_weight="1"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <ImageButton
+                            android:id="@+id/ib_one_fav_project"
                             android:layout_marginTop="8dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:scaleType="center"
                             android:layout_gravity="end"
                             android:padding="10dp"
-                            android:src="@drawable/ic_favorite" />
+                            android:src="@drawable/ic_favorite"
+                            android:background="@color/projectDetailsBackground"/>
 
                     </LinearLayout>
 
@@ -207,11 +210,14 @@
                         android:layout_weight="1"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        <ImageButton
+                            android:id="@+id/ib_share_project_url"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:scaleType="center"
                             android:layout_gravity="center"
                             android:layout_weight="1"
+                            android:background="@color/projectDetailsBackground"
                             android:padding="16dp"
                             android:src="@drawable/ic_share" />
 
@@ -233,12 +239,15 @@
                         android:layout_weight="1"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        <ImageButton
+                            android:id="@+id/ib_two_fav_project"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:scaleType="center"
                             android:layout_gravity="center"
                             android:layout_weight="1"
                             android:padding="16dp"
+                            android:background="@color/projectDetailsBackground"
                             android:src="@drawable/ic_favorite" />
 
 

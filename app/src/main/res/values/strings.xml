@@ -167,6 +167,11 @@
     <string name="announcement_time">17 hours ago</string>
     <string name="announcement_author">Akshit Jain</string>
 
+    <string name="quiz_announcement_summary">A short quiz on SQLite concepts to give you a quick revision of the concepts.</string>
+    <string name="quiz_announcement_title">New Quiz is out!</string>
+    <string name="quiz_announcement_deadline">14th May</string>
+    <string name="quiz_announcement_lesson">SQLite</string>
+
     <string name="blog_title">Google India Challenge Scholarship: Nearing the end of a great journey</string>
     <string name="blog_author">Sudhanshu Vohra</string>
 

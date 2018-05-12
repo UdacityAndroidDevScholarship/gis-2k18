@@ -26,6 +26,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/mainScreenTextColor"
+                android:text="Quiz Announcements"
+                android:padding="5dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_quiz_announcements"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/mainScreenTextColor"
                 android:text="Blogs"
                 android:padding="5dp"/>
 
