@@ -7,56 +7,6 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.udacity.googleindiascholarships.ui.MainActivity"
-    tools:showIn="@layout/app_bar_main"
-    >
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_margin="16dp">
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/mainScreenTextColor"
-                android:text="Announcements"
-
-                android:padding="5dp"/>
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_announcements"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/mainScreenTextColor"
-                android:text="Blogs"
-                android:padding="5dp"/>
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_blogs"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-
-
-        </LinearLayout>
-
-
-
-    </ScrollView>
-
-
-
+    tools:showIn="@layout/app_bar_main">
 
 </FrameLayout>

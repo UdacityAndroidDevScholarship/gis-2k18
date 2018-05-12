@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
@@ -44,9 +45,6 @@ public class MainActivity extends AppCompatActivity
     Spinner spCourses;
     ImageView ivNavHeader;
     ArrayAdapter<CharSequence> courseSpinnerAdapter;
-    AnnouncementsRecyclerViewAdapter announcementsRecyclerViewAdapter;
-    BlogsRecyclerViewAdapter blogsRecyclerViewAdapter;
-    RecyclerView blogsRecyclerView, announcementsRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,21 +86,8 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        //Fetching the Recycler views from the layout file
-        blogsRecyclerView = (RecyclerView) findViewById(R.id.rv_blogs);
-        announcementsRecyclerView = (RecyclerView) findViewById(R.id.rv_announcements);
-
-        blogsRecyclerViewAdapter = new BlogsRecyclerViewAdapter(this);
-        announcementsRecyclerViewAdapter = new AnnouncementsRecyclerViewAdapter(this);
-
-        LinearLayoutManager blogsHorizontalLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        LinearLayoutManager announcementsHorizontalLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-
-        blogsRecyclerView.setLayoutManager(blogsHorizontalLinearLayoutManager);
-        blogsRecyclerView.setAdapter(blogsRecyclerViewAdapter);
-
-        announcementsRecyclerView.setLayoutManager(announcementsHorizontalLinearLayoutManager);
-        announcementsRecyclerView.setAdapter(announcementsRecyclerViewAdapter);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.content_main, new HomeFragment()).commit();
     }
 
     @Override
@@ -192,7 +177,9 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null ;
 
         switch (id){
-
+            case R.id.nav_home:
+                fragment = new HomeFragment();
+                break;
             case R.id.nav_members:
                 fragment = new MembersFragment();
                 break;
@@ -223,7 +210,7 @@ public class MainActivity extends AppCompatActivity
 
         if(fragment != null){
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_main, fragment).addToBackStack(null);
+            ft.replace(R.id.content_main, fragment, "TAG").addToBackStack(null);
             ft.commit();
         }
 

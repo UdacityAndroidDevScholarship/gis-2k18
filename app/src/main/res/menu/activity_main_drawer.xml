@@ -5,39 +5,44 @@
 
     <group android:checkableBehavior="single">
 
+        <item android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/nav_item_home"
+            android:checked="true"/>
+
         <item
             android:id="@+id/nav_members"
             android:icon="@drawable/ic_members"
-            android:title="Members" />
+            android:title="@string/nav_item_members" />
         <item
             android:id="@+id/nav_gis_stories"
             android:icon="@drawable/ic_stories"
-            android:title="GIS Stories" />
+            android:title="@string/nav_item_gis_stories" />
         <item
             android:id="@+id/nav_projects"
             android:icon="@drawable/ic_projects"
-            android:title="Projects" />
+            android:title="@string/nav_item_projects" />
         <item
             android:id="@+id/nav_challenges"
             android:icon="@drawable/ic_challenges"
-            android:title="Challenges" />
+            android:title="@string/nav_item_challenges" />
 
         <item
             android:id="@+id/nav_quizzes"
             android:icon="@drawable/ic_quizzes"
-            android:title="Quizzes" />
+            android:title="@string/nav_item_quizzes" />
         <item
             android:id="@+id/nav_community"
             android:icon="@drawable/ic_community"
-            android:title="Community" />
+            android:title="@string/nav_item_community" />
         <item
             android:id="@+id/nav_user_profile"
             android:icon="@drawable/ic_user_profile"
-            android:title="My Profile" />
+            android:title="@string/nav_item_my_profile" />
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_settings"
-            android:title="Settings" />
+            android:title="@string/nav_item_settings" />
     </group>
 
 

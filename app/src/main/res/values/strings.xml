@@ -169,4 +169,15 @@
 
     <string name="blog_title">Google India Challenge Scholarship: Nearing the end of a great journey</string>
     <string name="blog_author">Sudhanshu Vohra</string>
+
+    <!--Main Activity navigation bar string resource -->
+    <string name="nav_item_home">Home</string>
+    <string name="nav_item_members">Members</string>
+    <string name="nav_item_gis_stories">GIS Stories</string>
+    <string name="nav_item_projects">Projects</string>
+    <string name="nav_item_challenges">Challenges</string>
+    <string name="nav_item_community">Community</string>
+    <string name="nav_item_quizzes">Quizzes</string>
+    <string name="nav_item_my_profile">My Profile</string>
+    <string name="nav_item_settings">Settings</string>
 </resources>
