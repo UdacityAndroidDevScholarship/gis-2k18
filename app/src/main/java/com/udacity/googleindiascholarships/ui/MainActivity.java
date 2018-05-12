@@ -13,8 +13,6 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -33,14 +31,14 @@ import com.udacity.googleindiascholarships.members.ui.MembersFragment;
 import com.udacity.googleindiascholarships.projects.ui.ProjectsFragment;
 import com.udacity.googleindiascholarships.quizzes.ui.QuizzesFragment;
 import com.udacity.googleindiascholarships.stories.ui.StoriesFragment;
-import com.udacity.googleindiascholarships.ui.adapters.AnnouncementsRecyclerViewAdapter;
-import com.udacity.googleindiascholarships.ui.adapters.BlogsRecyclerViewAdapter;
 
 import java.util.Arrays;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private String currentVisibleFragment =HomeFragment.class.getSimpleName();
 
     Spinner spCourses;
     ImageView ivNavHeader;
@@ -208,9 +206,10 @@ public class MainActivity extends AppCompatActivity
                 break;
         }
 
-        if(fragment != null){
+        if(fragment != null && !fragment.getClass().getSimpleName().equals(currentVisibleFragment)){
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_main, fragment, "TAG").addToBackStack(null);
+            currentVisibleFragment =fragment.getClass().getSimpleName();
             ft.commit();
         }
 

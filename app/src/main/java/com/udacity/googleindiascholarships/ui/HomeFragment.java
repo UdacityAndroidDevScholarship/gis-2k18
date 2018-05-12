@@ -57,4 +57,11 @@ public class HomeFragment extends Fragment {
         quizAnnouncementsRecyclerView.setAdapter(quizAnnouncementsRecyclerViewAdapter);
         return v;
     }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        getActivity().setTitle("Home");
+    }
 }
