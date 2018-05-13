@@ -35,6 +35,7 @@ public class ChallengesAdapter extends RecyclerView.Adapter<ChallengesAdapter.Ch
     public void onBindViewHolder(final ChallengesAdapter.ChallengesCardViewHolder holder, int position) {
         final Challenge listItem = mListItems.get(position);
         holder.challengeAuthorNameTextView.setText(listItem.getChallenge_author());
+        holder.challengeMod.setText(listItem.getChallenge_mod());
         // holder.projectImageView.setImageResource(listItem.getPlaceHolderImage());
     }
 
@@ -46,10 +47,12 @@ public class ChallengesAdapter extends RecyclerView.Adapter<ChallengesAdapter.Ch
     public class ChallengesCardViewHolder extends RecyclerView.ViewHolder {
 
         public TextView challengeAuthorNameTextView;
+        public TextView challengeMod;
 
         public ChallengesCardViewHolder(View itemView) {
             super(itemView);
             challengeAuthorNameTextView = (TextView) itemView.findViewById(R.id.tv_author_name_challenges);
+            challengeMod = itemView.findViewById(R.id.tv_topic_title_challenges);
 
         }
     }

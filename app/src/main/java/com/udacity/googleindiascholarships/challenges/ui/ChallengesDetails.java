@@ -1,5 +1,9 @@
 package com.udacity.googleindiascholarships.challenges.ui;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -63,8 +67,9 @@ public class ChallengesDetails extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(ChallengesDetails.this,ChallengeUserInputDetails.class);
+                startActivity(intent);
+
             }
         });
     }
@@ -109,6 +114,19 @@ public class ChallengesDetails extends AppCompatActivity {
         });
 
 
+    }
+
+    public boolean checkInternetConnectivity(){
+        //Check internet connection//
+        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        // Get details on the currently active default data network//
+        NetworkInfo netInformation = connectivityManager.getActiveNetworkInfo();
+        // If there is a network connection, then fetch data//
+        if(netInformation!=null && netInformation.isConnected()){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }
