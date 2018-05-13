@@ -43,6 +43,7 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.8.3' // required
     implementation 'com.leocardz:link-preview:2.0.0@aar'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.google.firebase:firebase-storage:11.8.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'

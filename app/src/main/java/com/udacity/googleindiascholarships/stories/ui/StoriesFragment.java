@@ -1,5 +1,8 @@
 package com.udacity.googleindiascholarships.stories.ui;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -51,17 +54,26 @@ public class StoriesFragment extends android.support.v4.app.Fragment{
         rvFeaturedStories.setLayoutManager(llmFeaturedStories);
         allStoriesLinks = new ArrayList<ExternalLinks>();
         featuredStoriesLinks = new ArrayList<ExternalLinks>();
-        readFeaturedStoriesFromFirebase();
-        readAllStoriesFromFirebase();
 
-        featuredStoriesAdapter = new FeaturedStoriesAdapter(getContext(),allStoriesLinks,numberOfFeaturedStories);
-        rvFeaturedStories.setAdapter(featuredStoriesAdapter);
+        if(checkInternetConnectivity()){
+            readFeaturedStoriesFromFirebase();
+            readAllStoriesFromFirebase();
+            featuredStoriesAdapter = new FeaturedStoriesAdapter(getContext(),allStoriesLinks,numberOfFeaturedStories);
+            rvFeaturedStories.setAdapter(featuredStoriesAdapter);
 
-        llmAllStories = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
-        rvAllStories.setLayoutManager(llmAllStories);
+            llmAllStories = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
+            rvAllStories.setLayoutManager(llmAllStories);
 
-        allStoriesAdapter = new AllStoriesAdapter(getContext(),allStoriesLinks);
-        rvAllStories.setAdapter(allStoriesAdapter);
+            allStoriesAdapter = new AllStoriesAdapter(getContext(),allStoriesLinks);
+            rvAllStories.setAdapter(allStoriesAdapter);
+        }else{
+            Toast.makeText(getContext(),"No internet connection",Toast.LENGTH_LONG).show();
+
+        }
+
+
+
+
 
         return customView;
     }
@@ -119,5 +131,18 @@ public class StoriesFragment extends android.support.v4.app.Fragment{
         super.onViewCreated(view, savedInstanceState);
 
         getActivity().setTitle("Stories");
+    }
+
+    public boolean checkInternetConnectivity(){
+        //Check internet connection//
+        ConnectivityManager connectivityManager = (ConnectivityManager)getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        // Get details on the currently active default data network//
+        NetworkInfo netInformation = connectivityManager.getActiveNetworkInfo();
+        // If there is a network connection, then fetch data//
+        if(netInformation!=null && netInformation.isConnected()){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

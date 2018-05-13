@@ -1,5 +1,8 @@
 package com.udacity.googleindiascholarships.challenges.ui;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -54,7 +58,14 @@ public class ChallengesFragment extends android.support.v4.app.Fragment {
 
         challengeList = new ArrayList<Challenge>();
 
-       readChallengesFirebase();
+        if(checkInternetConnectivity()){
+            readChallengesFirebase();
+        }else{
+            Toast.makeText(getContext(),"No internet connection",Toast.LENGTH_LONG).show();
+
+        }
+
+
 
         return rootView;
     }
@@ -93,5 +104,19 @@ public class ChallengesFragment extends android.support.v4.app.Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("Challenges");
+    }
+
+
+    public boolean checkInternetConnectivity(){
+        //Check internet connection//
+        ConnectivityManager connectivityManager = (ConnectivityManager)getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        // Get details on the currently active default data network//
+        NetworkInfo netInformation = connectivityManager.getActiveNetworkInfo();
+        // If there is a network connection, then fetch data//
+        if(netInformation!=null && netInformation.isConnected()){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
