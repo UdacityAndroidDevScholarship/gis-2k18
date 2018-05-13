@@ -1,5 +1,6 @@
 package com.udacity.googleindiascholarships.currentuser.ui;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -31,6 +32,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.udacity.googleindiascholarships.R;
+import com.udacity.googleindiascholarships.challenges.ui.ChallengeUserInputDetails;
 import com.udacity.googleindiascholarships.currentuser.utils.RoundedImg;
 import com.udacity.googleindiascholarships.members.ui.adapters.ProfileViewPagerAdapter;
 import com.udacity.googleindiascholarships.utils.Constants;
@@ -45,6 +47,7 @@ public class UserDetailsActivity extends AppCompatActivity implements View.OnCli
     private final static int PICK_IMAGE_CODE = 123;
     private final static int TAKE_PICTURE_CODE = 133;
     private final static int STORAGE_PERMISSION_CODE = 135;
+    private final static int STORAGE_PERMISSION_CODE_GALLERY = 137;
     ImageView userProfilePicture;
     private String mCurrentPhotoPath;
     private boolean clickedPicture = false;
@@ -192,12 +195,22 @@ public class UserDetailsActivity extends AppCompatActivity implements View.OnCli
                 if(imagePickDialog.isShowing()){
                     imagePickDialog.cancel();
                 }
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_PICK);
-                startActivityForResult(intent, PICK_IMAGE_CODE);
+                if(ContextCompat.checkSelfPermission(this,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                    openGallery();
+                }else{
+                    ActivityCompat.requestPermissions(this,
+                            new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE_GALLERY);
+                }
                 break;
         }
+    }
+
+    private void openGallery() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_PICK);
+        startActivityForResult(intent, PICK_IMAGE_CODE);
     }
 
     private File createImageFile() throws IOException {
@@ -217,8 +230,7 @@ public class UserDetailsActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if(requestCode == STORAGE_PERMISSION_CODE){
-            if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
+        if(requestCode == STORAGE_PERMISSION_CODE && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                 Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
                     File photoFile = null;
@@ -235,10 +247,14 @@ public class UserDetailsActivity extends AppCompatActivity implements View.OnCli
                         takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
                         startActivityForResult(takePictureIntent, TAKE_PICTURE_CODE);
                     }
-                }
             }else {
                 Toast.makeText(this, "You cannot take a picture without granting this permission", Toast.LENGTH_SHORT).show();
             }
+        }
+        if(requestCode == STORAGE_PERMISSION_CODE_GALLERY && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            openGallery();
+        }else{
+            Toast.makeText(this, "Permission is required to read the external storage", Toast.LENGTH_SHORT).show();
         }
     }
 
