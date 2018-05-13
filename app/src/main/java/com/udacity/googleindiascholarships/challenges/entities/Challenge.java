@@ -9,6 +9,9 @@ public class Challenge {
    private String challenge_author;
     private String challenge_description;
     private String challenge_github_url;
+    private String challenge_author_prpfile;
+
+    private String challenge_mod;
     ArrayList<String> list_challenge_submissions;
 
 
@@ -25,12 +28,18 @@ public class Challenge {
         this.challenge_name = challenge_name;
    }
 
-   public Challenge(String challenge_author,String challenge_description,String challenge_github_url){
+   public Challenge(String challenge_author,String challenge_description,String challenge_github_url,String challenge_mod){
         this.challenge_author = challenge_author;
         this.challenge_description = challenge_description;
         this.challenge_github_url = challenge_github_url;
+        this.challenge_mod = challenge_mod;
 
    }
+
+
+    public String getChallenge_mod() {
+        return challenge_mod;
+    }
 
     public String getChallenge_author() {
         return challenge_author;

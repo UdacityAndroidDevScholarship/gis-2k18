@@ -89,9 +89,6 @@ public class ChallengesFragment extends android.support.v4.app.Fragment {
 
 
     }
-
-
-
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
