@@ -16,6 +16,10 @@
     <color name="grey">#737373</color>
 
     <color name="lightBlue">#2175BC</color>
+    <color name="bottomText">#6b6b76</color>
+    <color name="rippleEffectColor">#f816a463</color>
+    <color name="btnSignIn">#1fbad6</color>
+    <color name="btnRegister">#83838c</color>
     <color name="projectDetailsBackground">#FAFAFA</color>
     <color name="mainScreenBackground">#F3F3F3</color>
     <color name="mainScreenTextColor">#797979</color>

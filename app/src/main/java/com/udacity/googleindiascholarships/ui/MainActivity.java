@@ -42,7 +42,11 @@ public class MainActivity extends AppCompatActivity
 
     Spinner spCourses;
     ImageView ivNavHeader;
+
+    private FirebaseAuth mAuth;
+
     ArrayAdapter<CharSequence> courseSpinnerAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,8 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //Firebase
+        mAuth= FirebaseAuth.getInstance();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open,
@@ -204,6 +210,9 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_settings:
                 fragment = new SettingsFragment();
                 break;
+            case R.id.nav_logout:
+                signOut();
+                break;
         }
 
         if(fragment != null && !fragment.getClass().getSimpleName().equals(currentVisibleFragment)){
@@ -213,9 +222,18 @@ public class MainActivity extends AppCompatActivity
             ft.commit();
         }
 
+        ///
         setToolbarShadow(id);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+    }
+
+    private void signOut() {
+        mAuth.signOut();
+
+        Intent logout=new Intent(MainActivity.this,LoginActivity.class);
+        startActivity(logout);
+
     }
 }
