@@ -185,4 +185,14 @@
     <string name="nav_item_quizzes">Quizzes</string>
     <string name="nav_item_my_profile">My Profile</string>
     <string name="nav_item_settings">Settings</string>
+
+
+    <!--Community Dialog Strings-->
+    <string name="community_dialog_link_shared_by">Community</string>
+    <string name="community_dialog_link_preview_title">Link Preview Title</string>
+    <string name="community_dialog_btn_open_text">Open</string>
+    <string name="community_dialog_btn_close_text">Close</string>
+
+
+
 </resources>

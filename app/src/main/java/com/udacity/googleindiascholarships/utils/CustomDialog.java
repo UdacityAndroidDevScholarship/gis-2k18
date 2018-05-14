@@ -33,6 +33,8 @@ import java.util.Random;
 public class CustomDialog extends Dialog implements View.OnClickListener{
     private ExternalLinks linkSelected;
     private TextView previewTitle;
+    private TextView linkSharedBy;
+    private ImageView previewThumbnail;
     private ImageView previewImage;
     private Button openBtn;
     private Button cancelBtn;
@@ -55,6 +57,8 @@ public class CustomDialog extends Dialog implements View.OnClickListener{
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.custom_dialog);
         previewTitle = findViewById(R.id.preview_title);
+        linkSharedBy = findViewById(R.id.link_shared_by);
+        previewThumbnail =findViewById(R.id.link_thumbnail);
         previewImage = findViewById(R.id.preview_image);
         openBtn = findViewById(R.id.open_btn);
         cancelBtn = findViewById(R.id.cancel_btn);
@@ -67,6 +71,8 @@ public class CustomDialog extends Dialog implements View.OnClickListener{
             public void onPre() {
                 progressBar.setVisibility(View.VISIBLE);
                 previewTitle.setVisibility(View.GONE);
+                linkSharedBy.setVisibility(View.GONE);
+                previewThumbnail.setVisibility(View.GONE);
                 previewImage.setVisibility(View.GONE);
                 openBtn.setVisibility(View.GONE);
                 cancelBtn.setVisibility(View.GONE);
@@ -83,8 +89,10 @@ public class CustomDialog extends Dialog implements View.OnClickListener{
                     int size = sourceContent.getImages().size();
                     previewTitle.setText(sourceContent.getTitle());
                     previewTitle.setVisibility(View.VISIBLE);
+                    linkSharedBy.setVisibility(View.VISIBLE);
                     if(size>0)
                         Picasso.with(context).load(sourceContent.getImages().get(random.nextInt(size))).into(previewImage);
+                    previewThumbnail.setVisibility(View.VISIBLE);
                     previewImage.setVisibility(View.VISIBLE);
                     openBtn.setVisibility(View.VISIBLE);
                     cancelBtn.setVisibility(View.VISIBLE);
