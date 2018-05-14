@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp"
-    android:elevation="50dp"
-    app:cardCornerRadius="5dp">
+    app:cardElevation="2dp"
+    app:cardCornerRadius="5dp"
+    app:cardUseCompatPadding="true">
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:id="@+id/challengeCardElement"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+        android:padding="5dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/challenge_imageView"
@@ -20,17 +20,66 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_margin="8dp"
-            android:src="@drawable/gis_logo" />
+            android:layout_marginTop="8dp"
+            android:src="@drawable/gis_logo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tv_challenge_name"
+            app:layout_constraintLeft_toLeftOf="parent"/>
 
         <TextView
             android:id="@+id/tv_challenge_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
             android:text="Challenge Name"
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-            android:textColor="#000000" />
-    </LinearLayout>
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:padding="3dp"
+            android:fontFamily="@font/asap"
+            app:layout_constraintLeft_toRightOf="@id/challenge_imageView"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="59dp" />
+
+        <TextView
+            android:id="@+id/tv_challenge_deadline_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="Deadline:"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.34"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_challenge_name"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_challenge_deadline_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="3dp"
+            android:text="@string/quiz_announcement_deadline"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/tv_challenge_deadline_label"
+            app:layout_constraintVertical_bias="0.0" />
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.v7.widget.CardView>
