@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_gradient"
     android:padding="16dp"
-    android:id="@+id/root_layout"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.udacity.googleindiascholarships.ui.LoginActivity"
     tools:showIn="@layout/activity_login">
@@ -30,45 +29,70 @@
         android:textAlignment="center"
         android:textColor="@color/secondaryLight"
         android:textSize="@dimen/sign_in_text_size" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:weightSum="2"
 
 
-        android:layout_marginTop="330dp"
-        android:layout_centerHorizontal="true"
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/username_txt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gis_txt"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/double_margin"
+        android:drawablePadding="@dimen/small_margin"
+        android:drawableStart="@android:drawable/sym_action_email"
+        android:fontFamily="@font/roboto"
+        android:hint="@string/username_hint"
+        android:padding="@dimen/standard_margin"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/secondaryLight"
+        android:textSize="@dimen/input_size"
+        app:backgroundTint="@color/secondaryLight" />
 
-        <Button
-            android:id="@+id/btnSignIn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="6dp"
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/password_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username_txt"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:drawablePadding="@dimen/small_margin"
+        android:drawableStart="@android:drawable/ic_lock_idle_lock"
+        android:fontFamily="@font/roboto"
+        android:hint="@string/password_hint"
+        android:padding="@dimen/standard_margin"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/secondaryLight"
+        android:textSize="@dimen/input_size"
+        app:backgroundTint="@color/secondaryLight" />
 
-            android:layout_weight="1"
-            android:background="@drawable/btn_sign_in_background"
-            android:text="SIGN IN"
-            android:textColor="@android:color/white" />
 
-        <Button
-            android:id="@+id/btnRegister"
-            android:background="@drawable/btn_register_background"
-            android:layout_marginLeft="6dp"
-            android:textColor="@color/btnRegister"
-            android:text="Sign up"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/sign_in_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password_txt"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/triple_margin"
+        android:background="@drawable/rounded_shape"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/sign_in"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sign_in_text_size" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/google_sign_in_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/forgot_password_txt"
-        android:layout_alignEnd="@+id/forgot_password_txt"
-        android:layout_marginBottom="21dp"
+        android:layout_below="@id/sign_in_btn"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/roboto_medium"
         android:textColor="@android:color/white"
         android:textSize="@dimen/sign_in_text_size" />
@@ -77,15 +101,15 @@
         android:id="@+id/forgot_password_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="29dp"
-        android:fontFamily="@font/roboto_thin"
+        android:layout_below="@id/google_sign_in_btn"
         android:text="@string/forgot_password"
         android:textAlignment="center"
-        android:textAllCaps="false"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto_thin"
+        android:textSize="@dimen/sp_standard_size"
         android:textColor="@color/secondaryLight"
-        android:textSize="@dimen/sp_standard_size" />
+        android:textAllCaps="false"
+        android:layout_centerInParent="true"/>
 
     <!-- Removed Process Bar Will Add Programmatically  -->
 </RelativeLayout>

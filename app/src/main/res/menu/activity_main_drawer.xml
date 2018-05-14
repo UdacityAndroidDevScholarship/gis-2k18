@@ -42,11 +42,6 @@
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_settings"
-            android:title="Settings" />
-        <item
-            android:id="@+id/nav_logout"
-            android:icon="@drawable/ic_exit_to_app_black_24dp"
-            android:title="Sign Out" />
             android:title="@string/nav_item_settings" />
     </group>
 
