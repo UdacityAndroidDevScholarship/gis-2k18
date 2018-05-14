@@ -1,64 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minHeight="300dp"
-    android:background="#3E80B4"
-    android:padding="8dp"
-    android:orientation="vertical" >
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/preview_title"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:text="Link Preview Title"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"/>
+        android:background="@android:color/white"
+        android:minHeight="300dp"
+        android:minWidth="400dp"
+        android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_gradient"
+        android:elevation="5dp"
+        android:padding="5dp"
+        tools:targetApi="lollipop">
+
+        <ImageView
+            android:id="@+id/link_thumbnail"
+            android:layout_width="80dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_gis_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/link_shared_by"
+            android:layout_width="match_parent"
+            android:layout_height="27dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            android:text="@string/community_dialog_link_shared_by"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/link_thumbnail" />
+
+        <TextView
+            android:id="@+id/preview_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:padding="5dp"
+            android:text="@string/community_dialog_link_preview_title"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/link_shared_by" />
+    </android.support.constraint.ConstraintLayout>
 
     <ImageView
         android:id="@+id/preview_image"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="2dp"
-        android:src="@drawable/udacity_logo"
-        android:layout_marginBottom="4dp"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#3E80B4"
-        android:layout_marginBottom="4dp"
-        android:orientation="horizontal" >
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:contextClickable="false"
+        android:cropToPadding="true"
+        android:fitsSystemWindows="false"
+        android:forceHasOverlappingRendering="false"
+        android:src="@drawable/udacity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="161dp" />
 
         <Button
             android:id="@+id/open_btn"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_gradient"
             android:clickable="true"
-            android:text="Open"
-            android:textColor="#5DBCD2"
-            android:textStyle="bold" />
+            android:padding="10dp"
+            android:text="@string/community_dialog_btn_open_text"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cancel_btn"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/cancel_btn"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="5dp"
-            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorAccent"
             android:clickable="true"
-            android:text="Close"
-            android:textColor="#5DBCD2"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:padding="10dp"
+            android:text="@string/community_dialog_btn_close_text"
+            android:textColor="@color/btnBlueDark"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/open_btn" />
 
     <ProgressBar
         android:id="@+id/dialog_loading_progress"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:indeterminate="true"/>
+        android:indeterminate="true" />
 </LinearLayout>
+</ScrollView>
+
