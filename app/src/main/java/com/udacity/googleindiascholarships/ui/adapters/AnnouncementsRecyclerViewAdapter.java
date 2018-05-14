@@ -4,7 +4,9 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
 import com.udacity.googleindiascholarships.R;
 
 /**
@@ -29,7 +31,8 @@ public class AnnouncementsRecyclerViewAdapter extends RecyclerView.Adapter<Annou
 
     @Override
     public void onBindViewHolder(AnnouncementsViewHolder holder, int position) {
-
+        Picasso.with(mContext).load(R.drawable.akshit).
+                into(holder.announcementsThumbnail);
     }
 
     @Override
@@ -38,8 +41,10 @@ public class AnnouncementsRecyclerViewAdapter extends RecyclerView.Adapter<Annou
     }
 
     public class AnnouncementsViewHolder extends RecyclerView.ViewHolder {
+        ImageView announcementsThumbnail;
         public AnnouncementsViewHolder(View itemView) {
             super(itemView);
+            announcementsThumbnail = itemView.findViewById(R.id.img_view_announcement_thumbnail);
         }
     }
 }
