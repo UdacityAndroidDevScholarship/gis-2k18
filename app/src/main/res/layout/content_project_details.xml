@@ -115,7 +115,8 @@
                     android:layout_gravity="end"
                     android:background="@color/colorPrimary"
                     android:src="@+id/b_projectLink"
-                    android:text="LINK" />
+                    android:text="LINK"
+                    android:textColor="@color/white"/>
 
                 <View
                     android:layout_width="fill_parent"

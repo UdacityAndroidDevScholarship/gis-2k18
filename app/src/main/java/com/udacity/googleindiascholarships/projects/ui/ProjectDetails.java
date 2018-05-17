@@ -80,11 +80,14 @@ public class ProjectDetails extends AppCompatActivity implements View.OnClickLis
         shareProjectLink = findViewById(R.id.ib_share_project_url);
         markAsFavOne = findViewById(R.id.ib_one_fav_project);
         markAsFavTwo = findViewById(R.id.ib_two_fav_project);
+
         project_name = getIntent().getStringExtra("project_name");
         project_description = getIntent().getStringExtra("project_description");
         project_github_url = getIntent().getStringExtra("project_github_url");
         project_logo_url = getIntent().getStringExtra("project_logo_url");
         project_status = getIntent().getStringExtra("project_status");
+
+
         setTitle(project_name);
         setTitleColor(R.color.black);
         mProjectName.setText(project_name);
@@ -113,7 +116,9 @@ public class ProjectDetails extends AppCompatActivity implements View.OnClickLis
         mLinearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         contactRecyclerView.setLayoutManager(mLinearLayoutManager);
         contactList = new ArrayList<ContactModerator>();
+
         readContactFirebase(project_name);
+
         AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override

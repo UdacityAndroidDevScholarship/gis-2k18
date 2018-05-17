@@ -6,95 +6,130 @@
     app:cardCornerRadius="5dp"
     app:cardElevation="2dp"
     app:cardUseCompatPadding="true">
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="280dp"
+
+    <LinearLayout
+        android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_gradient"
-        android:padding="5dp">
+        android:orientation="vertical">
+
+
         <ImageView
             android:id="@+id/img_view_blog_thumbnail"
-            android:layout_width="280dp"
-            android:layout_height="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
             android:src="@drawable/akshit"
             android:scaleType="centerCrop"
+            android:layout_margin="4dp"
             android:background="@drawable/bg_gradient"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            />
+
         <TextView
             android:id="@+id/tv_blog_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/blog_title"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:gravity="center"
             android:textStyle="bold"
-            android:textSize="18sp"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
             android:padding="3dp"
+            android:layout_marginBottom="8dp"
             android:fontFamily="@font/asap"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/img_view_blog_thumbnail"/>
-
-        <TextView
-            android:id="@+id/tv_blog_author"
-            android:layout_width="wrap_content"
+           />
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/blog_author"
-            android:textColor="@color/lightWhite"
-            android:textSize="12sp"
-            android:padding="3dp"
-            android:drawableLeft="@drawable/ic_author"
-            android:gravity="center"
-            android:fontFamily="@font/roboto_bold"
-            android:layout_marginTop="16dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_blog_title"/>
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/ib_open_blog"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_margin="2dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_gradient"
-            android:tint="@color/white"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_open_in_browser"
-            app:layout_constraintBottom_toBottomOf="@+id/ib_share_blog"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/ib_share_blog"
-            app:layout_constraintVertical_bias="0.0" />
 
-        <ImageButton
-            android:id="@+id/ib_share_blog"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_margin="2dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_gradient"
-            android:tint="@color/white"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_share"
-            app:layout_constraintBottom_toBottomOf="@+id/ib_bookmark_blog"
-            app:layout_constraintRight_toLeftOf="@id/ib_open_blog"
-            app:layout_constraintTop_toTopOf="@+id/ib_bookmark_blog"
-            app:layout_constraintVertical_bias="1.0" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
 
-        <ImageButton
-            android:id="@+id/ib_bookmark_blog"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_margin="2dp"
+
+
+                <TextView
+                    android:id="@+id/tv_blog_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blog_author"
+                    android:textColor="@color/black"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+                    android:padding="3dp"
+                    android:drawableLeft="@drawable/ic_author_black"
+                    android:gravity="center"
+                    android:fontFamily="@font/roboto_bold"
+                    />
+
+
+            </LinearLayout>
+
+
+
+            <ImageButton
+                android:id="@+id/ib_bookmark_blog"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/white"
+                android:tint="@color/black"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_bookmark"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/bg_gradient"
-            android:tint="@color/white"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_bookmark"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_blog_author"
-            app:layout_constraintRight_toLeftOf="@id/ib_share_blog"
-            app:layout_constraintTop_toTopOf="@+id/tv_blog_author"
-            app:layout_constraintVertical_bias="0.0" />
-    </android.support.constraint.ConstraintLayout>
+            android:background="@color/black" />
+
+
+        <LinearLayout
+            android:padding="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/ib_open_blog"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:tint="@color/black"
+                android:src="@drawable/ic_open_in_browser"
+               />
+
+
+            <ImageButton
+                android:id="@+id/ib_share_blog"
+                android:layout_weight="1"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_margin="2dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:tint="@color/black"
+                android:src="@drawable/ic_share"
+               />
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
 
 </android.support.v7.widget.CardView>

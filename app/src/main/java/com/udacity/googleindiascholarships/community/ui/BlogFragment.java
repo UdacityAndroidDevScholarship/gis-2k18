@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -38,6 +39,8 @@ public class BlogFragment extends Fragment {
     private RecyclerView blogRecyclerView;
     private BlogAdapter blogAdapter;
 
+    ProgressBar mProgressBar;
+
     public BlogFragment() {
         // Required empty public constructor
     }
@@ -48,6 +51,7 @@ public class BlogFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_blog, container, false);
         blogRecyclerView = rootView.findViewById(R.id.blogs_recyclerView);
+        mProgressBar = rootView.findViewById(R.id.progress_barBlog);
         blogRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         blogLinks = new ArrayList<ExternalLinks>();
 
@@ -55,6 +59,7 @@ public class BlogFragment extends Fragment {
             readFromFirebase();
             blogAdapter = new BlogAdapter(getContext(), blogLinks);
             blogRecyclerView.setAdapter(blogAdapter);
+            mProgressBar.setVisibility(View.GONE);
         }else{
             Toast.makeText(getContext(),"No internet connection",Toast.LENGTH_LONG).show();
 
