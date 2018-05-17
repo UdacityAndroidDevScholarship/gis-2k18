@@ -45,7 +45,7 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.LinkPreviewVie
     public void onBindViewHolder(final LinkPreviewViewHolder holder, int position) {
         final ExternalLinks currentExternalLink = mLinkItems.get(position);
 
-        holder.previewLinkText.setText(currentExternalLink.getLinkUrl());
+        //holder.previewLinkText.setText(currentExternalLink.getLinkUrl());
         holder.previewLinkPostedBy.setText(currentExternalLink.getLinkPostedBy());
         holder.previewLinkDescription.setText(currentExternalLink.getLinkDescription());
         holder.previewLinkOpenInBrowser.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +72,7 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.LinkPreviewVie
     }
 
     public class LinkPreviewViewHolder extends RecyclerView.ViewHolder {
-        public TextView previewLinkText;
+       // public TextView previewLinkText;
         public TextView previewLinkPostedBy;
         public TextView previewLinkDescription;
         public TextView previewLinkOpenInBrowser;
@@ -80,7 +80,7 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.LinkPreviewVie
 
         public LinkPreviewViewHolder(View itemView) {
             super(itemView);
-            previewLinkText = (TextView) itemView.findViewById(R.id.link_display_url);
+            //previewLinkText = (TextView) itemView.findViewById(R.id.link_display_url);
             previewLinkPostedBy = (TextView) itemView.findViewById(R.id.link_shared_by);
             previewLinkDescription = (TextView)itemView.findViewById(R.id.link_display_description);
             previewLinkOpenInBrowser = (TextView)itemView.findViewById(R.id.link_open_btn);

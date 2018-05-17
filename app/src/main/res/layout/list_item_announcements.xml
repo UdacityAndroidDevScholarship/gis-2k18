@@ -1,86 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-app:cardCornerRadius="5dp"
-app:cardElevation="2dp"
-app:cardUseCompatPadding="true">
-<android.support.constraint.ConstraintLayout
-    android:layout_width="280dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_gradient"
-    android:padding="2dp">
-    <ImageView
-        android:id="@+id/img_view_announcement_thumbnail"
-        android:layout_width="280dp"
-        android:layout_height="100dp"
-        android:src="@drawable/akshit"
-        android:background="@drawable/bg_gradient"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+    app:cardCornerRadius="5dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true">
 
-    <TextView
-        android:id="@+id/tv_announcement_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/announcement_title"
-        android:textColor="@color/white"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:padding="3dp"
-        android:fontFamily="@font/asap"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_view_announcement_thumbnail"/>
 
-    <TextView
-        android:id="@+id/tv_announcement_author"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:text="@string/announcement_author"
-        android:textColor="@color/lightWhite"
-        android:textSize="12sp"
-        android:padding="3dp"
-        android:drawableLeft="@drawable/ic_author"
-        android:gravity="center"
-        android:fontFamily="@font/roboto_bold"
-        android:layout_marginTop="4dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_announcement_title"/>
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_announcement_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:padding="3dp"
-        android:text="@string/announcement_time"
-        android:textColor="@color/lightWhite"
-        android:textSize="12sp"
-        android:drawableLeft="@drawable/ic_time"
-        android:gravity="center"
-        android:fontFamily="@font/roboto"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_announcement_author"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_announcement_title"
-        app:layout_constraintVertical_bias="0.0" />
+        <ImageView
+            android:id="@+id/img_view_announcement_thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/bg_gradient"
+            android:scaleType="fitCenter"
+            android:src="@drawable/akshit" />
 
-    <TextView
-        android:id="@+id/tv_announcement_summary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/announcement_summary"
-        android:textColor="@color/white"
-        android:textSize="13sp"
-        android:padding="3dp"
-        android:gravity="center"
-        android:fontFamily="@font/roboto_medium"
-        android:layout_marginTop="4dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_announcement_author"/>
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_announcement_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/asap"
+            android:gravity="center"
+            android:padding="4dp"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="@string/announcement_title"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/ic_author_black" />
+
+
+                <TextView
+                    android:id="@+id/tv_announcement_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="@font/asap"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="@string/announcement_author"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+
+                android:orientation="horizontal">
+
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/ic_time_gray" />
+
+                <TextView
+
+                    android:id="@+id/tv_announcement_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/asap"
+                    android:gravity="center"
+                    android:textStyle="italic"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/announcement_time"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+                    android:textColor="@color/grey" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_announcement_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:fontFamily="@font/asap"
+            android:text="@string/announcement_summary"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            android:textColor="@color/grey"
+
+            />
+
+
+    </LinearLayout>
+
 
 </android.support.v7.widget.CardView>

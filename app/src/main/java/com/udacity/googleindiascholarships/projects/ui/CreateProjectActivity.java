@@ -53,7 +53,7 @@ public class CreateProjectActivity extends AppCompatActivity {
                     progressBar.setVisibility(View.VISIBLE);
                     Project currentProject = new Project(projectNameTxt.getText().toString(), projectDescriptionTxt.getText().toString(), projectLogoTxt.getText().toString(), projectGithubUrlTxt.getText().toString(),"Under Development");
                     saveProjectToFirebase(currentProject);
-                    //Project currentProject = new Project(projectNameTxt.getText().toString(),projectDescriptionTxt.getText().toString(),projectLogoTxt.getText().toString(),projectGithubUrlTxt.getText().toString());
+                   // Project currentProject = new Project(projectNameTxt.getText().toString(),projectDescriptionTxt.getText().toString(),projectLogoTxt.getText().toString(),projectGithubUrlTxt.getText().toString());
                     //saveProjectToFirebase(currentProject);
 
                 }

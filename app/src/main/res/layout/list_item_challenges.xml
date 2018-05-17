@@ -81,7 +81,7 @@
                     android:maxLines="1"
                     android:paddingTop="10dp"
                     android:text="READ"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     android:visibility="visible" />
