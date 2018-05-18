@@ -8,9 +8,13 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.firebase.client.Firebase;
@@ -23,6 +27,7 @@ import com.udacity.googleindiascholarships.R;
 import com.udacity.googleindiascholarships.community.ui.entities.ExternalLinks;
 import com.udacity.googleindiascholarships.projects.ui.adapter.ProjectsAdapter;
 import com.udacity.googleindiascholarships.projects.entities.Project;
+import com.udacity.googleindiascholarships.ui.MainActivity;
 import com.udacity.googleindiascholarships.utils.Constants;
 
 import java.util.ArrayList;
@@ -50,6 +55,7 @@ public class ProjectsFragment extends android.support.v4.app.Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_projects, container, false);
+
 
         projectsRecyclerView = rootView.findViewById(R.id.projectsRecyclerView);
         createProjectBtn = rootView.findViewById(R.id.create_projects_fab_btn);
@@ -102,6 +108,35 @@ public class ProjectsFragment extends android.support.v4.app.Fragment {
         return rootView;
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_search,menu);
+        MenuItem menuItem = menu.findItem(R.id.menu_search);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+        super.onCreateOptionsMenu(menu, inflater);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
 
     void readProjectsFirebase(){
 
@@ -138,4 +173,6 @@ public class ProjectsFragment extends android.support.v4.app.Fragment {
 
         getActivity().setTitle("Projects");
     }
+
+
 }

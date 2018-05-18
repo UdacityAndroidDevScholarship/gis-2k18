@@ -192,7 +192,7 @@
     <string name="community_dialog_link_preview_title">Link Preview Title</string>
     <string name="community_dialog_btn_open_text">Open</string>
     <string name="community_dialog_btn_close_text">Close</string>
-
+    <string name="search">Search</string>
 
 
 </resources>
