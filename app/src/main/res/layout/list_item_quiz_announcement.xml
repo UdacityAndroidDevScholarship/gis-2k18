@@ -106,24 +106,24 @@
 
             <ImageButton
                 android:id="@+id/ib_open_quiz"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:background="@color/white"
                 android:src="@drawable/ic_open_in_browser" />
 
             <ImageButton
                 android:id="@+id/ib_share_quiz"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:background="@color/white"
                 android:src="@drawable/ic_share" />
 
             <ImageButton
                 android:id="@+id/ib_bookmark_quiz"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:background="@color/white"
                 android:src="@drawable/ic_bookmark" />

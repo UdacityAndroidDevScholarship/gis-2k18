@@ -30,6 +30,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:11.8.0'
     implementation 'com.google.firebase:firebase-auth:11.8.0'
     implementation 'com.android.support:preference-v7:26.1.0'
+    implementation 'com.firebaseui:firebase-ui-database:3.2.2'
+
 
 
     implementation 'com.firebase:firebase-client-android:2.5.2'
